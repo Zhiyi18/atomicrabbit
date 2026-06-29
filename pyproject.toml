@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atomicrabbit"
+version = "0.1.0"
+dependencies = [
+    "qutip"
+]
+
+[project.optional-dependencies]
+astro = ["astroquery"]
+viz   = ["matplotlib", "plotly"]
+dev   = ["pytest", "jupyter"]

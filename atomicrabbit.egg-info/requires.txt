@@ -1,0 +1,12 @@
+qutip
+
+[astro]
+astroquery
+
+[dev]
+pytest
+jupyter
+
+[viz]
+matplotlib
+plotly
