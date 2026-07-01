@@ -21,17 +21,26 @@ mF2 = ZeemanState(
 '''
 mu_B = physical_constants["Bohr magneton"][0]
 
+def joule_to_cm(energy_joule):
+    energy_cm = energy_joule / (h * c * 100)
+    return energy_cm
+    
+def cm_to_joule(energy_cm):
+    energy_joule = energy_cm * h * c * 100
+    return energy_joule
+    
 @dataclass(frozen=True)
 class FineState:
     configuration: str
-    term: str
     L: float
     S: float
     J: float
     energy_cm: float
     parity: str
-    I: Optional[float] = None
     gJ: Optional[float] = None
+    A_hyperfine: Optional[float] = None
+    B_hyperfine: Optional[float] = None
+
     
     @property
     def g(self):
@@ -58,24 +67,26 @@ class FineState:
     
     @property
     def spectroscopic_name(self):
-        return f"{self.configuration} {self.term_symbol()}"
+        return f"{self.configuration} {self.term_symbol}"
 
 
 @dataclass(frozen=True)
 class HyperfineState:
     parent: FineState
     F: float
-    gF: float
-    A: float
-    B: float = 0
+    I: Optional[float] = None
 
     @property
     def J(self):
-        return self.fine_state.J
-
+        return self.parent.J
+    
     @property
-    def I(self):
-        return self.fine_state.I
+    def A_hyperfine(self):
+        return self.parent.A_hyperfine
+    
+    @property
+    def B_hyperfine(self):
+        return self.parent.B_hyperfine
     
     @property
     def g(self):
@@ -86,12 +97,11 @@ class HyperfineState:
         '''
         calculate hyperfine shift
         '''
-        
         J = self.J
         I = self.I
         F = self.F
-        A = self.A
-        B = self.B
+        A = self.A_hyperfine
+        B = self.B_hyperfine
 
         C = F * (F + 1) - I * (I + 1) - J * (J + 1)
     
@@ -99,7 +109,7 @@ class HyperfineState:
         delta_E = 0.5 * A * C
     
         # Electric quadrupole term
-        if B != 0 and I > 0.5 and J > 0.5:
+        if B != None and I > 0.5 and J > 0.5:
             numerator = (
                 1.5 * C * (C + 1)
                 - 2 * I * (I + 1) * J * (J + 1)
@@ -116,27 +126,62 @@ class HyperfineState:
     
     @property
     def energy_cm(self):
-        return (
-            self.parent.energy_cm
-            + self.hyperfine_shift()
-        )
+        return self.parent.energy_cm + self.hyperfine_shift
 
     
 @dataclass(frozen=True)
 class ZeemanState:
     parent: FineState | HyperfineState
-    mF: float
     B : float   # Magnetic field strength
+    mF: Optional[float] = None
+    gF: Optional[float] = None
 
     @property
     def zeeman_shift(self):
-        delta_E = mu_B * self.parent.g * self.mF * self.B
-        return delta_E
+        delta_E = mu_B * self.gF * self.mF * self.B
+        return joule_to_cm(delta_E)
     
     @property
     def energy_cm(self):
         return (
             self.parent.energy_cm
             + self.zeeman_shift()
-        )
+        ), (
+            self.parent.energy_cm
+            - self.zeeman_shift())
+
+def allowed_F(I, J):
+    # Finding all allowed F values(F between |I-J| and I+J)
+    F_min2 = round(2 * abs(I - J))
+    F_max2 = round(2 * (I + J))
     
+    return [f2 / 2 for f2 in range(F_min2, F_max2 + 1, 2)]
+
+def hyperfine_split(state, I=None, gF=None):
+    '''
+    I: The nuclear spin(induces hyperfine splitting)
+    B: External magnetic field(induces Zeeman splitting)
+    '''
+    
+    state_list = []
+    
+    if I == None:
+        print(f'No hyperfine structure for {state.spectroscopic_name}')
+        return
+    
+    F_list = allowed_F(I, state.J)
+    
+    for F in F_list:     
+        if state.A_hyperfine is None and state.B_hyperfine is None:
+            print('Hyperfine constants A and B missing when creating the fine structure')
+        
+        state_list.append(HyperfineState(
+                parent = state,
+                F = F,
+                I = I
+                ))
+            
+    return state_list
+            
+            
+            
