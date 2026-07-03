@@ -143,12 +143,7 @@ class ZeemanState:
     
     @property
     def energy_cm(self):
-        return (
-            self.parent.energy_cm
-            + self.zeeman_shift()
-        ), (
-            self.parent.energy_cm
-            - self.zeeman_shift())
+        return self.parent.energy_cm + self.zeeman_shift
 
 def allowed_F(I, J):
     # Finding all allowed F values(F between |I-J| and I+J)
@@ -157,12 +152,10 @@ def allowed_F(I, J):
     
     return [f2 / 2 for f2 in range(F_min2, F_max2 + 1, 2)]
 
-def hyperfine_split(state, I=None, gF=None):
+def hyperfine_split(state, I=None):
     '''
     I: The nuclear spin(induces hyperfine splitting)
-    B: External magnetic field(induces Zeeman splitting)
     '''
-    
     state_list = []
     
     if I == None:
@@ -182,6 +175,76 @@ def hyperfine_split(state, I=None, gF=None):
                 ))
             
     return state_list
+
+def allowed_mF(F):
+    # Finding all allowed mF values between -F and F
+    F2 = round(2 * F)
+    return [mF2 / 2 for mF2 in range(-F2, F2 + 1, 2)]
+
+def zeeman_split(state, B=None, gF=None):
+    state_list = []
+    
+    if B == None:
+        print('No Zeeman splitting due to zero magnetic field')
+        return
+    
+    if isinstance(state, FineState):
+        mF_list = allowed_mF(state.J)
+        
+    elif isinstance(state, HyperfineState):
+        mF_list = allowed_mF(state.F)
+        
+    else:
+        print('Only FineState and HyperfineState instances can have zeeman splitting')
+        
+    for mF in mF_list:
+        if gF is None:
+            print('Please enter gF to calculated Zeeman splitting')
+        
+        state_list.append(ZeemanState(
+            parent = state,
+            B = B,
+            mF = mF,
+            gF = gF))
+        
+    return state_list
+
+
+'''
+Functions to split a list of states in one go
+'''
+def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
+
+def batch_hyperfine_split(state_list, I=None):
+    state_list = flatten(state_list)
+    hyperfine_list = []
+    for state in state_list:
+        hyperfine_state = hyperfine_split(state, I)
+        hyperfine_list.append(hyperfine_state)
+    
+    hyperfine_list = flatten(hyperfine_list)
+    return hyperfine_list
+
+def batch_zeeman_split(state_list, B=None, gF=None):
+    state_list = flatten(state_list)
+    zeeman_list = []
+    for state in state_list:
+        zeeman_state = zeeman_split(state, B, gF)
+        zeeman_list.append(zeeman_state)
+        
+    zeeman_list = flatten(zeeman_list)
+    return zeeman_list
+    
+        
+        
+            
             
             
             

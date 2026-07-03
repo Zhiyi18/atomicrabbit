@@ -18,6 +18,8 @@ state1 = states.FineState(
     J = 0,
     energy_cm = 0,
     parity = '',
+    A_hyperfine = -109.5,
+    B_hyperfine = 0
     )
 
 state2 = states.FineState(
@@ -42,10 +44,29 @@ state3 = states.FineState(
     B_hyperfine = 0
     )
 
+'''
 state3_split = states.hyperfine_split(state3, I = 3/2)
 print(state3_split)
 for state in state3_split:
     print(state.energy_cm)
+    
+state3_zeeman_split = states.zeeman_split(state3, B=1e-4, gF=2)
+for state in state3_zeeman_split:
+    print(state.energy_cm)
+'''
 
+state_list = [state1, state2, state3]
+hyperfine_list = states.batch_hyperfine_split(state_list, I = 3/2)
+for state in hyperfine_list:
+    print(state.energy_cm)
+    
+zeeman_list = states.batch_zeeman_split(state_list, gF=2, B=1e-4)
+for state in zeeman_list:
+    print(state.energy_cm)
+
+full_splitting = states.batch_zeeman_split(hyperfine_list, gF=2, B=1e-4)
+for state in full_splitting:
+    print(state.energy_cm)
+print(len(full_splitting))
 
 
