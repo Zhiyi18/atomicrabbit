@@ -3,23 +3,11 @@ from typing import Optional
 import numpy as np
 from scipy.constants import h, hbar, epsilon_0, c, k, physical_constants
 
-'''
-example use:
-    
-d52 = FineState(...)
 
-F3 = HyperfineState(
-    parent=d52,
-    F=3
-)
-
-mF2 = ZeemanState(
-    parent=F3,
-    m=2
-)
-
-'''
 mu_B = physical_constants["Bohr magneton"][0]
+mu_N = physical_constants["nuclear magneton"][0]
+gL = 1
+gS = physical_constants['electron g factor'][0]
 
 def joule_to_cm(energy_joule):
     energy_cm = energy_joule / (h * c * 100)
@@ -37,14 +25,23 @@ class FineState:
     J: float
     energy_cm: float
     parity: str
-    gJ: Optional[float] = None
     A_hyperfine: Optional[float] = None
     B_hyperfine: Optional[float] = None
 
     
     @property
-    def g(self):
-       return self.gJ
+    def gJ(self):
+        L = self.L
+        S = self.S
+        J = self.J
+        
+        if J == 0:
+            return 0.0  # no magnetic moment when J=0
+    
+        orbital_term = gL * (J*(J+1) - S*(S+1) + L*(L+1)) / (2*J*(J+1))
+        spin_term = gS * (J*(J+1) + S*(S+1) - L*(L+1)) / (2*J*(J+1))
+    
+        return orbital_term + spin_term
    
     @property
     def degeneracy(self):
@@ -75,10 +72,15 @@ class HyperfineState:
     parent: FineState
     F: float
     I: Optional[float] = None
+    mu_I: Optional[float] = None
 
     @property
     def J(self):
         return self.parent.J
+    
+    @property
+    def gI(self):
+        return self.mu_I / (mu_N * self.I)
     
     @property
     def A_hyperfine(self):
@@ -89,8 +91,21 @@ class HyperfineState:
         return self.parent.B_hyperfine
     
     @property
-    def g(self):
-        return self.gF
+    def gF(self):
+        gJ = self.parent.gJ
+        gI = self.gI
+        F = self.F
+        I = self.I
+        J = self.J
+        
+        if F == 0:
+            return 0.0  # no magnetic moment when F=0
+    
+        electronic_term = gJ * (F*(F+1) - I*(I+1) + J*(J+1)) / (2*F*(F+1))
+        nuclear_term = gI * (F*(F+1) + I*(I+1) - J*(J+1)) / (2*F*(F+1))
+        
+        return electronic_term + nuclear_term
+
     
     @property
     def hyperfine_shift(self):
@@ -134,8 +149,17 @@ class ZeemanState:
     parent: FineState | HyperfineState
     B : float   # Magnetic field strength
     mF: Optional[float] = None
-    gF: Optional[float] = None
 
+    @property
+    def gF(self):
+        if isinstance(self.parent, FineState):
+            gF = self.parent.gJ
+            
+        if isinstance(self.parent, HyperfineState):
+            gF = self.parent.gF
+            
+        return gF
+            
     @property
     def zeeman_shift(self):
         delta_E = mu_B * self.gF * self.mF * self.B
@@ -152,26 +176,31 @@ def allowed_F(I, J):
     
     return [f2 / 2 for f2 in range(F_min2, F_max2 + 1, 2)]
 
-def hyperfine_split(state, I=None):
+def hyperfine_split(state, I=None, mu_I=None):
     '''
     I: The nuclear spin(induces hyperfine splitting)
     '''
     state_list = []
     
     if I == None:
-        print(f'No hyperfine structure for {state.spectroscopic_name}')
+        raise ValueError(
+            'Cannot create hyperfine structure without nuclear spin.'
+            )
         return
     
     F_list = allowed_F(I, state.J)
     
     for F in F_list:     
         if state.A_hyperfine is None and state.B_hyperfine is None:
-            print('Hyperfine constants A and B missing when creating the fine structure')
+            raise ValueError(
+                'Hyperfine constants A and B missing when creating the fine structure'
+                )
         
         state_list.append(HyperfineState(
                 parent = state,
                 F = F,
-                I = I
+                I = I,
+                mu_I = mu_I
                 ))
             
     return state_list
@@ -181,37 +210,42 @@ def allowed_mF(F):
     F2 = round(2 * F)
     return [mF2 / 2 for mF2 in range(-F2, F2 + 1, 2)]
 
-def zeeman_split(state, B=None, gF=None):
+def zeeman_split(state, B=None):
     state_list = []
     
     if B == None:
-        print('No Zeeman splitting due to zero magnetic field')
-        return
+        raise ValueError(
+            'Cannot create Zeeman levels without magnetic field.'
+            )
     
     if isinstance(state, FineState):
         mF_list = allowed_mF(state.J)
         
     elif isinstance(state, HyperfineState):
+        if state.mu_I == None:
+            raise ValueError(
+                'Nuclear magnetic dipole moment mu_I missing when creating the hyperfine structure'
+                )
+        
         mF_list = allowed_mF(state.F)
         
     else:
-        print('Only FineState and HyperfineState instances can have zeeman splitting')
+        raise TypeError(
+            'Only FineState and HyperfineState instances can have zeeman splitting'
+            )
         
     for mF in mF_list:
-        if gF is None:
-            print('Please enter gF to calculated Zeeman splitting')
         
         state_list.append(ZeemanState(
             parent = state,
             B = B,
-            mF = mF,
-            gF = gF))
+            mF = mF))
         
     return state_list
 
 
 '''
-Functions to split a list of states in one go
+Methods to split a list of states in one go
 '''
 def flatten(lst):
     result = []
@@ -222,21 +256,21 @@ def flatten(lst):
             result.append(item)
     return result
 
-def batch_hyperfine_split(state_list, I=None):
+def batch_hyperfine_split(state_list, I=None, mu_I=None):
     state_list = flatten(state_list)
     hyperfine_list = []
     for state in state_list:
-        hyperfine_state = hyperfine_split(state, I)
+        hyperfine_state = hyperfine_split(state, I, mu_I)
         hyperfine_list.append(hyperfine_state)
     
     hyperfine_list = flatten(hyperfine_list)
     return hyperfine_list
 
-def batch_zeeman_split(state_list, B=None, gF=None):
+def batch_zeeman_split(state_list, B=None):
     state_list = flatten(state_list)
     zeeman_list = []
     for state in state_list:
-        zeeman_state = zeeman_split(state, B, gF)
+        zeeman_state = zeeman_split(state, B)
         zeeman_list.append(zeeman_state)
         
     zeeman_list = flatten(zeeman_list)

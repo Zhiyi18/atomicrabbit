@@ -13,9 +13,60 @@ class Transition:
     lifetime: Optional[float] = None
     A: Optional[float] = None
     
+    def __post_init__(self):
+        if type(self.lower) is not type(self.upper):
+            raise TypeError(
+                f'Lower state type and upper state type mismatch when creating the transition.'
+                f'Got {type(self.lower).__name__} and {type(self.upper).__name__}.'
+            )
+    
     
     @property
-    #def dipole_moment(self):
+    def reduced_dipole(self):
+        if self.A == None:
+            raise TypeError(
+                'Einstein coefficient A missing when creating the transition.'
+                )
+            
+        d_ij = np.sqrt(
+            3 * np.pi * epsilon_0 * hbar * c**3 * self.A
+            / self.frequency()**3
+            )
+        return d_ij
+    
+    @property
+    def hyperfine_factor(self):
+        if isInstance(self.lower, FineState):
+            return 1
+        
+        elif isInstance(self.lower, HyperfineState):
+            hyperfine_factor = 
+            return hyperfine_factor
+        
+        else isInstance(self.lower, ZeemanState):
+            hyperfine_factor = 
+            return hyperfine_factor
+        
+    @property
+    def angular_factor(self):
+        if isInstance(self.lower, FineState):
+            angular_factor = 
+            return angular_factor
+        
+        elif isInstance(self.lower, HyperfineState):
+            angular_factor =
+            return angular_factor
+        
+        else isInstance(self.lower, ZeemanState):
+            angular_factor = 
+            return angular_factor
+        
+    @property
+    def transition_dipole(self):
+        dipole = self. reduced_dipole
+                * self. hyperfine_factor
+                * self.angular_factor
+        return dipole
         
         
     def frequency(self):
@@ -36,5 +87,6 @@ class Transition:
     
     def detuning(self, laser):
         return self.frequency() - laser.frequency
+    
     
         
