@@ -9,7 +9,7 @@ class Laser:
     frequency: float
     intensity: float
     linewidth: float
-    polarization: Optional[float] = None
+    polarization: Optional[int] = None
     
     def electric_field_amplitude(self):
         return np.sqrt(2 * self.intensity / (c * epsilon_0))

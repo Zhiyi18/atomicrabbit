@@ -57,12 +57,12 @@ for state in state3_zeeman_split:
 
 state_list = [state1, state2, state3]
 hyperfine_list = states.batch_hyperfine_split(state_list, I = 3/2, mu_I=0.1)
-for state in hyperfine_list:
-    print(state.energy_cm)
+#for state in hyperfine_list:
+    #print(state.energy_cm)
     
 zeeman_list = states.batch_zeeman_split(state_list, B=1e-4)
-for state in zeeman_list:
-    print(state.energy_cm)
+#for state in zeeman_list:
+    #print(state.energy_cm)
 
 full_splitting = states.batch_zeeman_split(hyperfine_list, B=1e-4)
 for state in full_splitting:

@@ -3,6 +3,8 @@ from typing import Optional
 import numpy as np
 from qutip import *
 from scipy.constants import h, hbar, epsilon_0, c, k, physical_constants
+from sympy.physics.wigner import wigner_3j, wigner_6j
+from sympy import N
 from atomicrabbit.physics import states
 
 @dataclass(frozen=True)
@@ -23,8 +25,8 @@ class Transition:
     
     @property
     def reduced_dipole(self):
-        if self.A == None:
-            raise TypeError(
+        if self.A is None:
+            raise ValueError(
                 'Einstein coefficient A missing when creating the transition.'
                 )
             
@@ -36,46 +38,79 @@ class Transition:
     
     @property
     def hyperfine_factor(self):
-        if isInstance(self.lower, FineState):
+        if isinstance(self.lower, FineState):
             return 1
         
-        elif isInstance(self.lower, HyperfineState):
-            hyperfine_factor = 
-            return hyperfine_factor
+        else:
+            Jp = self.upper.J
+            Fp = self.upper.F
+            I = self.lower.I
+            J = self.lower.J
+            F = self.lower.F
+            
+            hf = float(N(wigner_6j(Jp, Fp, I, F, J, 1)))
+            
+            return (
+                    (-1) ** (Jp + I + F + 1)
+                    * sqrt((2 * Fp + 1) * (2 * F + 1))
+                    * hf
+                )
         
-        else isInstance(self.lower, ZeemanState):
-            hyperfine_factor = 
-            return hyperfine_factor
+
+    def angular_factor(self, laser):
+        q = laser.polarisation
+        if laser.polarisation not in(-1, 0, 1):
+            raise ValueError(
+                'Laser polarisation must be -1, 0, or 1'
+                )
+            
+        elif isinstance(self.lower, FineState):
+            Fp = self.upper.J
+            mp = self.upper.mJ
+            F = self.lower.J
+            m = self.lower.mJ
+            exponent = Jp - mp
         
-    @property
-    def angular_factor(self):
-        if isInstance(self.lower, FineState):
-            angular_factor = 
-            return angular_factor
+        elif isinstance(self.lower, HyperfineState):
+            raise ValueError(
+                'HyperfineState has no mF. Use ZeemanState to calculate angular factors.'
+                )
         
-        elif isInstance(self.lower, HyperfineState):
-            angular_factor =
-            return angular_factor
+        elif isinstance(self.lower, ZeemanState):
+            Fp = self.upper.F
+            mp = self.upper.mF
+            F = self.lower.F
+            m = self.lower.mF
+            exponent = Fp - mp
+            
+        else:
+            raise TypeError(
+                f'Unsupported state type: {type(self.lower).__name__}'
+                )
+            
+        cg = float(N(wigner_3j(Fp, 1, F, -mp, q, m)))
+        return (
+                (-1) ** exponent
+                * cg
+        )
         
-        else isInstance(self.lower, ZeemanState):
-            angular_factor = 
-            return angular_factor
-        
-    @property
-    def transition_dipole(self):
-        dipole = self. reduced_dipole
-                * self. hyperfine_factor
-                * self.angular_factor
+
+    def transition_dipole(self, laser):
+        dipole = (
+            self. reduced_dipole
+            * self. hyperfine_factor
+            * self.angular_factor(laser)
+        )
         return dipole
         
-        
+    @property
     def frequency(self):
         return (self.upper.energy - self.lower.energy) * c *100
         
     def rabi_frequency(self, laser):
        E0 = laser.electric_field_amplitude()
        
-       return self.dipole * E0 / hbar
+       return self.transition_dipole(laser) * E0 / hbar
     
     def B21(self):
         return self.A * c**3 / (8 * np.pi * h * self.frequency()** 3)

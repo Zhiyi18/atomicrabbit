@@ -27,6 +27,7 @@ class FineState:
     parity: str
     A_hyperfine: Optional[float] = None
     B_hyperfine: Optional[float] = None
+    mJ: Optional[float] = None
 
     
     @property
@@ -151,6 +152,21 @@ class ZeemanState:
     mF: Optional[float] = None
 
     @property
+    def I(self):
+        if isinstance(self.parent, FineState):
+            return 0.0
+        if isinstance(self.parent, HyperfineState):
+            return self.parent.I
+        
+    @property
+    def J(self):
+        return self.parent.J
+    
+    @property
+    def F(self):
+        return self.parent.F
+        
+    @property
     def gF(self):
         if isinstance(self.parent, FineState):
             gF = self.parent.gJ
@@ -182,7 +198,7 @@ def hyperfine_split(state, I=None, mu_I=None):
     '''
     state_list = []
     
-    if I == None:
+    if I is None:
         raise ValueError(
             'Cannot create hyperfine structure without nuclear spin.'
             )
@@ -213,16 +229,14 @@ def allowed_mF(F):
 def zeeman_split(state, B=None):
     state_list = []
     
-    if B == None:
-        raise ValueError(
-            'Cannot create Zeeman levels without magnetic field.'
-            )
+    if B is None:
+        B = 0
     
     if isinstance(state, FineState):
         mF_list = allowed_mF(state.J)
         
     elif isinstance(state, HyperfineState):
-        if state.mu_I == None:
+        if state.mu_I is None:
             raise ValueError(
                 'Nuclear magnetic dipole moment mu_I missing when creating the hyperfine structure'
                 )
