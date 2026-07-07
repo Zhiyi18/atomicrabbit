@@ -10,6 +10,9 @@ Created on Wed Jul  1 19:38:36 2026
 # Instance: atomicRabbit
 # Method: atomic_rabbit
 from atomicrabbit.physics import states
+from atomicrabbit.physics import lasers
+from atomicrabbit.physics import transitions
+from atomicrabbit.physics import atom
 
 state1 = states.FineState(
     configuration = '6s2',
@@ -44,6 +47,35 @@ state3 = states.FineState(
     B_hyperfine = 0
     )
 
+transition_12 = transitions.Transition(state1, state2, linewidth=20e6, A=1.19e8)
+transition_23 = transitions.Transition(state2, state3, linewidth=20e6, A=5.00e6)
+transition_13 = transitions.Transition(state1, state3, linewidth=20e6, A=1e5)
+transition_list = [transition_12, transition_23, transition_13]
+
+laser1 = lasers.Laser(
+    frequency = transition_12.frequency, 
+    intensity = 1e5,  
+    linewidth = 4e6, 
+    polarization = 1
+    )
+
+laser2 = lasers.Laser(
+    frequency = transition_12.frequency, 
+    intensity = 1e5,  
+    linewidth = 4e6, 
+    polarization = 1
+    )
+
+laser_list = [laser1, laser2]
+
+'''
+laser3 = lasers.Laser(
+    frequency = c / 405e-9,
+    intensity = 1e10, 
+    linewidth=4e6
+    )
+'''
+
 '''
 state3_split = states.hyperfine_split(state3, I = 3/2)
 print(state3_split)
@@ -70,3 +102,16 @@ for state in full_splitting:
 print(len(full_splitting))
 
 
+Ba137 = atom.Atom(species = 'Ba I',
+                  isotope = '137',
+                  transition_list = transition_list,
+                  laser_list = laser_list,
+                  I = 3/2,
+                  mu_I = 0.1,
+                  B = 1e-4
+    )
+
+driven_list = Ba137.driven_transition()
+#for transition in driven_list:
+    #print(f'Driven transition {transition.lower.spectroscopic_name} - {transition.upper.spectroscopic_name}')
+    #print(f'Transition dipole moment = {transition.transition_dipole}')

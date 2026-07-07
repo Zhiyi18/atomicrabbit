@@ -107,6 +107,9 @@ class HyperfineState:
         
         return electronic_term + nuclear_term
 
+    @property
+    def spectroscopic_name(self):
+        return f"{self.parent.configuration} {self.parent.term_symbol}, F = {self.F}"
     
     @property
     def hyperfine_shift(self):
@@ -179,11 +182,16 @@ class ZeemanState:
     @property
     def zeeman_shift(self):
         delta_E = mu_B * self.gF * self.mF * self.B
-        return joule_to_cm(delta_E)
+        return delta_E
     
     @property
     def energy_cm(self):
         return self.parent.energy_cm + self.zeeman_shift
+    
+    @property
+    def spectroscopic_name(self):
+        return f"{self.parent.spectroscopic_name}, mF = {self.mF}"
+    
 
 def allowed_F(I, J):
     # Finding all allowed F values(F between |I-J| and I+J)
@@ -245,7 +253,8 @@ def zeeman_split(state, B=None):
         
     else:
         raise TypeError(
-            'Only FineState and HyperfineState instances can have zeeman splitting'
+            'Only FineState and HyperfineState instances can have zeeman splitting.'
+            f'Got {state}.'
             )
         
     for mF in mF_list:
