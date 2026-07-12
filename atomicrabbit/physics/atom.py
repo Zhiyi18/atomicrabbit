@@ -46,6 +46,7 @@ class Atom:
                             linewidth = transition.linewidth,
                             lifetime = transition.lifetime
                             ))
+                        
         else:
             for transition in self.transition_list:
                 lower_states = states.batch_zeeman_split(states.hyperfine_split(transition.lower, I = self.I, mu_I = self.mu_I), self.B)
@@ -59,10 +60,11 @@ class Atom:
                             linewidth = transition.linewidth,
                             lifetime = transition.lifetime
                             ))
+                        
         return zeeman_transitions
-                            
-
+        
     def driven_transition(self):
+        # add situations where the transitions are not zeeman states later
         driven_transition = []
         zeeman_transitions = self.zeeman_transitions()
         for zeeman_transition in zeeman_transitions:
@@ -74,3 +76,23 @@ class Atom:
                     print(f'Transition dipole = {dipole}')
                         
         return driven_transition
+    
+    @property
+    def system_size(self):
+        # add non-zeeman states later too
+        # this thing calls zeeman_transitions twice and might slow the calculations down!
+        return len(self.zeeman_transitions())
+    
+    def construct_hamiltonian(self):
+        N = self.system_size
+        driven_transitons = self.driven_transition()
+        H = Qobj(np.zeros((N, N), dtype=complex))
+
+        # Diagonal terms
+        for i in range(N):
+
+        # Off-diagonal laser interaction terms
+        for (i, j) in driven_transitions:
+            
+
+        return H

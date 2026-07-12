@@ -111,7 +111,10 @@ Ba137 = atom.Atom(species = 'Ba I',
                   B = 1e-4
     )
 
-driven_list = Ba137.driven_transition()
+# driven_list = Ba137.driven_transition()
 #for transition in driven_list:
     #print(f'Driven transition {transition.lower.spectroscopic_name} - {transition.upper.spectroscopic_name}')
     #print(f'Transition dipole moment = {transition.transition_dipole}')
+
+H = Ba137.construct_hamiltonian()
+print(H)
