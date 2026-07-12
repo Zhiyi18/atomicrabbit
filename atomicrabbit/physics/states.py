@@ -16,6 +16,9 @@ def joule_to_cm(energy_joule):
 def cm_to_joule(energy_cm):
     energy_joule = energy_cm * h * c * 100
     return energy_joule
+
+def cm_to_omega(energy_cm):
+    return 2 * np.pi * c * 100 * energy_cm 
     
 @dataclass(frozen=True)
 class FineState:
@@ -66,6 +69,14 @@ class FineState:
     @property
     def spectroscopic_name(self):
         return f"{self.configuration} {self.term_symbol}"
+    
+    @property
+    def energy_J(self):
+        return cm_to_joule(self.energy_cm)
+    
+    @property
+    def energy_omega(self):
+        return cm_to_omega(self.energy_cm)
 
 
 @dataclass(frozen=True)
@@ -146,6 +157,14 @@ class HyperfineState:
     @property
     def energy_cm(self):
         return self.parent.energy_cm + self.hyperfine_shift
+    
+    @property
+    def energy_J(self):
+        return cm_to_joule(self.energy_cm)
+    
+    @property
+    def energy_omega(self):
+        return cm_to_omega(self.energy_cm)
 
     
 @dataclass(frozen=True)
@@ -187,6 +206,14 @@ class ZeemanState:
     @property
     def energy_cm(self):
         return self.parent.energy_cm + self.zeeman_shift
+    
+    @property
+    def energy_J(self):
+        return cm_to_joule(self.energy_cm)
+    
+    @property
+    def energy_omega(self):
+        return cm_to_omega(self.energy_cm)
     
     @property
     def spectroscopic_name(self):

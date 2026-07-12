@@ -127,6 +127,28 @@ class Transition(FineTransition):
         return (g2 / g1) * self.B21()
     
     def detuning(self, laser):
-        return self.frequency() - laser.frequency
+        return self.frequency - laser.frequency
+    
+@dataclass(frozen=True)
+class DrivenTransition:
+    transition: Transition
+    laser: lasers.Laser
+    dipole: float
+    
+    @property
+    def lower(self):
+        return self.transition.lower
+    
+    @property
+    def upper(self):
+        return self.transition.upper
+    
+    @property
+    def rabi_frequency(self):
+        return self.transition.rabi_frequency(self.laser)
+    
+    @property
+    def detuning(self):
+        return self.transition.detuning(self.laser)
     
 

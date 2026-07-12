@@ -13,6 +13,8 @@ from atomicrabbit.physics import states
 from atomicrabbit.physics import lasers
 from atomicrabbit.physics import transitions
 from atomicrabbit.physics import atom
+import qutip as qt
+import numpy as np
 
 state1 = states.FineState(
     configuration = '6s2',
@@ -116,5 +118,49 @@ Ba137 = atom.Atom(species = 'Ba I',
     #print(f'Driven transition {transition.lower.spectroscopic_name} - {transition.upper.spectroscopic_name}')
     #print(f'Transition dipole moment = {transition.transition_dipole}')
 
-H = Ba137.construct_hamiltonian()
-print(H)
+N = 36
+psi0 = qt.basis(N, 0)
+rho0 = qt.ket2dm(psi0)
+H, index = Ba137.build_hamiltonian()
+H = qt.Qobj(H)
+c_ops = []
+
+t_end = 1e-7
+n_steps = 500
+tlist = np.linspace(0, t_end, num=n_steps)
+
+result = qt.mesolve(H, 
+                 rho0, 
+                 tlist, 
+                 c_ops, 
+                 e_ops=[qt.basis(N, i) * qt.basis(N, i).dag() for i in range(N)])
+
+import matplotlib.pyplot as plt
+
+all_states = Ba137.add_zeeman_states()
+groups = {}
+for i, state in enumerate(all_states):
+    F_val = getattr(state, 'F', 'unknown')
+    groups.setdefault(F_val, []).append(i)
+
+group_labels = [(indices, f"F={F}") for F, indices in groups.items()]
+
+fig, axes = plt.subplots(len(group_labels), 1, figsize=(8, 3 * len(group_labels)), sharex=True)
+if len(group_labels) == 1:
+    axes = [axes]
+
+colors = plt.cm.tab10.colors
+for ax, (indices, title) in zip(axes, group_labels):
+    for idx in indices:
+        state = all_states[idx]
+        F_val = getattr(state, 'F', '?')
+        mF_val = getattr(state, 'mF', '?')
+        ax.plot(tlist * 1e6, result.expect[idx], label=f"F={F_val}, mF={mF_val}", color=colors[idx % 10])
+    ax.set_ylabel("Population")
+    ax.set_title(title)
+    ax.legend(fontsize=8)
+    ax.set_ylim(-0.05, 1.05)
+
+axes[-1].set_xlabel("Time (µs)")
+plt.tight_layout()
+plt.show()
