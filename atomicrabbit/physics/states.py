@@ -92,7 +92,10 @@ class HyperfineState:
     
     @property
     def gI(self):
-        return self.mu_I / (mu_N * self.I)
+        if self.I == 0 or self.I == None:
+            return 0
+        else:
+            return self.mu_I / (mu_N * self.I)
     
     @property
     def A_hyperfine(self):
@@ -186,7 +189,10 @@ class ZeemanState:
     
     @property
     def F(self):
-        return self.parent.F
+        if isinstance(self.parent, FineState):
+            return self.J
+        if isinstance(self.parent, HyperfineState):
+            return self.parent.F
         
     @property
     def gF(self):
