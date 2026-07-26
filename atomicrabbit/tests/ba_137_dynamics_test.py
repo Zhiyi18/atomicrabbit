@@ -62,7 +62,7 @@ laser1 = lasers.Laser(
     )
 
 laser2 = lasers.Laser(
-    frequency = transition_12.frequency, 
+    frequency = transition_23.frequency, 
     intensity = 1e5,  
     linewidth = 4e6, 
     polarization = 1
@@ -132,8 +132,8 @@ rho0 = qt.ket2dm(psi0)
 
 c_ops = []
 
-t_end = 1e-7
-n_steps = 5000
+t_end = 1e-8
+n_steps = 500
 tlist = np.linspace(0, t_end, num=n_steps)
 
 result = qt.mesolve(H, 

@@ -88,6 +88,17 @@ class Atom:
                         
         return driven_transition
     
+    def driven_transition_debug(self):
+        for driven in self.driven_transitions():
+            print(
+                f"{driven.lower.spectroscopic_name}"
+                f" --> "
+                f"{driven.upper.spectroscopic_name}"
+                f"   q={driven.laser.polarization}"
+                f"   Ω={driven.rabi_frequency:.3e}"
+                f"   Δ={driven.detuning:.3e}"
+            )
+        
     @property
     def system_size(self):
         # add non-zeeman states later too
@@ -103,8 +114,20 @@ class Atom:
             upper = driven.transition.upper
             Omega = driven.rabi_frequency
             detuning = driven.detuning
-            G.add_edge(lower, upper, Omega=Omega, detuning=detuning)
-        
+            
+            # Drop the off-resonant transitions(laser and transition mismatched)
+            if detuning == 0:
+                G.add_edge(lower, upper, Omega=Omega, detuning=detuning)
+
+            else:
+                ratio = abs(Omega / detuning)
+                print(f'Rabi frequency/detuning = {ratio}')
+                
+                if ratio >= 1e-8:
+                    G.add_edge(lower, upper,
+                               Omega=Omega,
+                               detuning=detuning)
+                    
         return G
     
     def assign_rotating_frame_energies(self):
@@ -117,8 +140,9 @@ class Atom:
             
             for u, v in nx.bfs_edges(G, ref):
                 detuning = G[u][v]['detuning']
-                sub_energies[v] = sub_energies[u] - hbar * detuning
-                energies.update(sub_energies)
+                sub_energies[v] = sub_energies[u] - 2 * np.pi * detuning
+                # sub_energies[v] = sub_energies[u] - hbar * detuning
+            energies.update(sub_energies)
     
         return energies
     
@@ -128,16 +152,30 @@ class Atom:
         index = {s: i for i, s in enumerate(states)}
         H = np.zeros((n, n), dtype=complex)
         
+        # Adding diagonal terms
         energies = self.assign_rotating_frame_energies()
         for state, E in energies.items():
-            H[index[state], index[state]] = E
+            # Dropping the off-resonant optical detunings
+            if abs(E) <= 1e10:
+                H[index[state], index[state]] = E
+                print(f'diagonal detuning = {E} added')
         
+        '''
+        # Adding off-diagonal terms
         for driven in self.driven_transitions():
             i, j = index[driven.transition.lower], index[driven.transition.upper]
-            H[i, j] = driven.rabi_frequency / 2
+            H[i, j] += driven.rabi_frequency / 2
             print(f'rabi frequency = {driven.rabi_frequency}')
             H[j, i] = np.conj(H[i, j])
+        '''
+        G = self.atom_graph()
+
+        for u, v, data in G.edges(data=True):
+            i = index[u]
+            j = index[v]
         
+            H[i,j] = data["Omega"]/2
+            H[j,i] = np.conj(H[i,j])
         return H, index
                 
                     

@@ -65,12 +65,12 @@ laser1 = lasers.Laser(
     frequency = transition_12.frequency, 
     intensity = 1e5,  
     linewidth = 4e6, 
-    polarization = 0
+    polarization = 1
     )
 
 laser2 = lasers.Laser(
-    frequency = transition_12.frequency, 
-    intensity = 1e5,  
+    frequency = transition_23.frequency, 
+    intensity = 0,  
     linewidth = 4e6, 
     polarization = 0
     )
@@ -92,8 +92,8 @@ for state in full_splitting:
 print(len(full_splitting))
 
 
-Ba137 = atom.Atom(species = 'Ba I',
-                  isotope = '137',
+Ba138 = atom.Atom(species = 'Ba I',
+                  isotope = '138',
                   transition_list = transition_list,
                   laser_list = laser_list,
                   I = 0,
@@ -108,10 +108,11 @@ Ba137 = atom.Atom(species = 'Ba I',
 
 N = 9
 
-H, index = Ba137.build_hamiltonian()
+H, index = Ba138.build_hamiltonian()
+print(H)
 H = qt.Qobj(H)
 
-all_states = Ba137.add_zeeman_states()
+all_states = Ba138.add_zeeman_states()
 ground_candidates = [s for s in all_states if s.parent.configuration == '6s2' and s.mF == 0]
 print(ground_candidates)
 
@@ -120,7 +121,7 @@ rho0 = qt.ket2dm(psi0)
 
 c_ops = []
 
-t_end = 1e-8
+t_end = 1e-9
 n_steps = 500
 tlist = np.linspace(0, t_end, num=n_steps)
 
@@ -140,6 +141,7 @@ idx = index[ground_candidates[0]]
 print("psi0 index:", idx)
 print("state at that index:", all_states[idx])
 print("F of that state:", all_states[idx].F)
+Ba138.driven_transition_debug()
 
 #%%
 import matplotlib.pyplot as plt
@@ -151,37 +153,12 @@ for i, state in enumerate(all_states):
 
 group_labels = [(indices, f"F={F}") for F, indices in groups.items()]
 
-fig, axes = plt.subplots(len(group_labels), 1, figsize=(8, 3 * len(group_labels)), sharex=True)
-if len(group_labels) == 1:
-    axes = [axes]
-
-colors = plt.cm.tab10.colors
-for ax, (indices, title) in zip(axes, group_labels):
-    for idx in indices:
-        state = all_states[idx]
-        F_val = getattr(state, 'F', '?')
-        mF_val = getattr(state, 'mF', '?')
-        ax.plot(tlist * 1e6, result.expect[idx], label = f"{state.parent.configuration} F={F_val}, mF={mF_val}", color=colors[idx % 10])
-    ax.set_ylabel("Population")
-    ax.set_title(title)
-    ax.legend(fontsize=8)
-    ax.set_ylim(-0.05, 1.05)
-
-axes[-1].set_xlabel("Time (µs)")
-plt.tight_layout()
-plt.show()
-
-#%%
 # Group state indices by fine state (configuration + term symbol)
 fine_groups = {}
 for i, state in enumerate(all_states):
     fine_state = state.parent  # ZeemanState -> HyperfineState -> FineState
     key = fine_state.spectroscopic_name  # e.g. "6s2 1S_0"
     fine_groups.setdefault(key, []).append(i)
-
-fig, axes = plt.subplots(len(fine_groups), 1, figsize=(9, 3.5 * len(fine_groups)), sharex=True)
-if len(fine_groups) == 1:
-    axes = [axes]
 
 colors = plt.cm.tab20.colors
 desired_order = ["6s2 1S_0", "6s6p 1P_1", "6s6d 1D_2"]

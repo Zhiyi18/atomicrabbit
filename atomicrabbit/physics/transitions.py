@@ -71,7 +71,7 @@ class Transition(FineTransition):
                 )
             
         elif isinstance(self.lower, states.FineState):
-            Fp = self.upper.J
+            Jp = self.upper.J
             mp = self.upper.mJ
             F = self.lower.J
             m = self.lower.mJ
