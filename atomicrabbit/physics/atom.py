@@ -35,7 +35,13 @@ class Atom:
         else:
             hyperfine_states = states.batch_hyperfine_split(fine_states, I=self.I, mu_I=self.mu_I)
             return states.batch_zeeman_split(hyperfine_states, self.B)
+        
+    def basis(self):
+        states = self.add_zeeman_states()
+        index = {s: i for i, s in enumerate(states)}
+        return states, index
     
+    '''
     # improve this later
     def zeeman_transitions(self):
         zeeman_transitions = []
@@ -68,20 +74,101 @@ class Atom:
                             ))
                         
         return zeeman_transitions
+    '''
+    def magnetic_sublevels(self, state):
+        if self.I == 0:
+            return states.zeeman_split(state, self.B)
     
+        return states.batch_zeeman_split(
+            states.hyperfine_split(
+                state,
+                I=self.I,
+                mu_I=self.mu_I,
+            ),
+            self.B,
+        )
+
+    def zeeman_transitions(self):
+        zeeman_transitions = []
+    
+        for transition in self.transition_list:
+    
+            lower_states = self.magnetic_sublevels(transition.lower)
+            upper_states = self.magnetic_sublevels(transition.upper)
+    
+            for lower in lower_states:
+                for upper in upper_states:
+                    zeeman_transitions.append(
+                        transitions.Transition(
+                            lower=lower,
+                            upper=upper,
+                            A=transition.A,
+                            linewidth=transition.linewidth,
+                            lifetime=transition.lifetime,
+                        )
+                    )
+
+        return zeeman_transitions
+    
+    def branching_ratios(self):
+        """Returns normalized branching ratios for every Zeeman transition."""
+    
+        ratios = {}
+    
+        for transition in self.transition_list:
+    
+            lower_states = self.magnetic_sublevels(transition.lower)
+            upper_states = self.magnetic_sublevels(transition.upper)
+    
+            # Collect all allowed decay amplitudes
+            amplitudes = {}
+    
+            for upper in upper_states:
+                total = 0.0
+    
+                for lower in lower_states:
+    
+                    decay = transitions.Transition(
+                        lower=lower,
+                        upper=upper,
+                        A=transition.A,
+                        linewidth=transition.linewidth,
+                        lifetime=transition.lifetime,
+                    )
+    
+                    amp2 = abs(decay.branching_amplitude)**2
+    
+                    if amp2 > 0:
+                        amplitudes[decay] = amp2
+                        total += amp2
+    
+                # Normalize excited state's decay channels
+                for decay, amp2 in amplitudes.items():
+                    if decay.upper == upper:
+                        ratios[decay] = amp2 / total
+    
+        return ratios
+
     def driven_transitions(self):
-        # add situations where the transitions are not zeeman states later
+        # Add situations where the transitions are not zeeman states later
         driven_transition = []
         zeeman_transitions = self.zeeman_transitions()
         for zeeman_transition in zeeman_transitions:
             for laser in self.laser_list:
                 dipole = zeeman_transition.transition_dipole(laser)
+                detuning = zeeman_transition.detuning(laser)
+                
+                # Dropping the dipole-forbidden terms
                 if dipole != 0:
-                    driven_transition.append(transitions.DrivenTransition(
-                        transition = zeeman_transition,
-                        laser = laser,
-                        dipole = dipole
-                        ))
+                    
+                    # Dropping the far-off-resonant transitions
+                    if abs(detuning) <= 1e13:
+                        driven_transition.append(transitions.DrivenTransition(
+                            transition = zeeman_transition,
+                            laser = laser,
+                            dipole = dipole
+                            ))
+                        
                     print(f'Driven transition {zeeman_transition.lower.spectroscopic_name} - {zeeman_transition.upper.spectroscopic_name}')
                     print(f'Transition dipole = {dipole}')
                     print(f'Laser = {laser}')                
@@ -108,25 +195,6 @@ class Atom:
     def atom_graph(self):
         G = nx.Graph()
         G.add_nodes_from(self.add_zeeman_states())
-        
-        for driven in self.driven_transitions():
-            lower = driven.transition.lower
-            upper = driven.transition.upper
-            Omega = driven.rabi_frequency
-            detuning = driven.detuning
-            
-            # Drop the off-resonant transitions(laser and transition mismatched)
-            if detuning == 0:
-                G.add_edge(lower, upper, Omega=Omega, detuning=detuning)
-
-            else:
-                ratio = abs(Omega / detuning)
-                print(f'Rabi frequency/detuning = {ratio}')
-                
-                if ratio >= 1e-8:
-                    G.add_edge(lower, upper,
-                               Omega=Omega,
-                               detuning=detuning)
                     
         return G
     
@@ -147,9 +215,12 @@ class Atom:
         return energies
     
     def build_hamiltonian(self):
-        states = self.add_zeeman_states()
+        # Now this part is shit because the diagonal terms and
+        # the off-diagonal terms are added separately from the 
+        # transitions and the atom graph
+        
+        states, index = self.basis()
         n = len(states)
-        index = {s: i for i, s in enumerate(states)}
         H = np.zeros((n, n), dtype=complex)
         
         # Adding diagonal terms
@@ -160,23 +231,40 @@ class Atom:
                 H[index[state], index[state]] = E
                 print(f'diagonal detuning = {E} added')
         
-        '''
         # Adding off-diagonal terms
         for driven in self.driven_transitions():
             i, j = index[driven.transition.lower], index[driven.transition.upper]
             H[i, j] += driven.rabi_frequency / 2
             print(f'rabi frequency = {driven.rabi_frequency}')
             H[j, i] = np.conj(H[i, j])
-        '''
-        G = self.atom_graph()
 
-        for u, v, data in G.edges(data=True):
-            i = index[u]
-            j = index[v]
-        
-            H[i,j] = data["Omega"]/2
-            H[j,i] = np.conj(H[i,j])
         return H, index
                 
-                    
+    def build_collapse_operators(self):
 
+        states, index = self.basis()
+    
+        branching = self.branching_ratios()
+    
+        c_ops = []
+    
+        for transition, ratio in branching.items():
+    
+            gamma = transition.A * ratio
+    
+            if gamma == 0:
+                continue
+    
+            lower = index[transition.lower]
+            upper = index[transition.upper]
+    
+            c = (
+                np.sqrt(gamma)
+                * basis(len(states), lower)
+                * basis(len(states), upper).dag()
+            )
+    
+            c_ops.append(c)
+    
+        return c_ops
+    

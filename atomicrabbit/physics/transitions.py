@@ -63,6 +63,7 @@ class Transition(FineTransition):
                 )
         
 
+    '''
     def angular_factor(self, laser):
         q = laser.polarization
         if q not in(-1, 0, 1):
@@ -100,15 +101,69 @@ class Transition(FineTransition):
                 * cg
         )
         
+    '''
+    
+    def angular_factor(self, q):
+        if q not in (-1, 0, 1):
+            return 0.0
+    
+        if isinstance(self.lower, states.FineState):
+            Jp = self.upper.J
+            mp = self.upper.mJ
+            J = self.lower.J
+            m = self.lower.mJ
+    
+            exponent = Jp - mp
+            cg = float(N(wigner_3j(Jp, 1, J, -mp, q, m)))
+    
+        elif isinstance(self.lower, states.HyperfineState):
+            raise ValueError(
+                "HyperfineState has no magnetic quantum number. "
+                "Use ZeemanState instead."
+            )
+    
+        elif isinstance(self.lower, states.ZeemanState):
+            Fp = self.upper.F
+            mp = self.upper.mF
+            F = self.lower.F
+            m = self.lower.mF
+    
+            exponent = Fp - mp
+            cg = float(N(wigner_3j(Fp, 1, F, -mp, q, m)))
+    
+        else:
+            raise TypeError(
+                f"Unsupported state type {type(self.lower).__name__}"
+            )
+    
+        return (-1)**exponent * cg
 
     def transition_dipole(self, laser):
         dipole = (
             self. reduced_dipole
             * self. hyperfine_factor
-            * self.angular_factor(laser)
+            * self.angular_factor(laser.polarization)
         )
+        print(f'reduced dipole = {self.reduced_dipole}')
+        print(f'6j symbol = {self.hyperfine_factor}')
+        print(f'3j symbol = {self.angular_factor(laser.polarization)}')
         return dipole
-        
+    
+    @property
+    def branching_amplitude(self):
+        if isinstance(self.lower, states.ZeemanState):
+            q = self.upper.mF - self.lower.mF
+            
+        elif isinstance(self.lower, states.FineState):
+            q = self.upper.mJ - self.lower.mJ
+            
+        else:
+            raise ValueError(
+                "Branching amplitudes require ZeemanState or FineState."
+            )
+    
+        return self.hyperfine_factor * self.angular_factor(q)
+
     @property
     def frequency(self):
         return (self.upper.energy_cm - self.lower.energy_cm) * c *100

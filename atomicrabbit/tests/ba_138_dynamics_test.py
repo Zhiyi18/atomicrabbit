@@ -70,9 +70,9 @@ laser1 = lasers.Laser(
 
 laser2 = lasers.Laser(
     frequency = transition_23.frequency, 
-    intensity = 0,  
+    intensity = 1e5,  
     linewidth = 4e6, 
-    polarization = 0
+    polarization = 1
     )
 
 laser_list = [laser1, laser2]
@@ -119,7 +119,7 @@ print(ground_candidates)
 psi0 = qt.basis(N, index[ground_candidates[0]])
 rho0 = qt.ket2dm(psi0)
 
-c_ops = []
+c_ops = Ba138.build_collapse_operators()
 
 t_end = 1e-9
 n_steps = 500
