@@ -1,0 +1,306 @@
+[
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 134, "nuclear_spin": 0.0, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 135, "nuclear_spin": 1.5, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 136, "nuclear_spin": 0.0, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 137, "nuclear_spin": 1.5, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 138, "nuclear_spin": 0.0, "mu_I": null}
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "authors": "Villemoes, P.; Arnesen, A.; Heijkenskjold, F.; Wahlin, A.",
+      "year": 1993,
+      "doi": null,
+      "journal": "Journal of Physics B: Atomic, Molecular and Optical Physics",
+      "notes": "Fast-beam (collinear) laser spectroscopy on Ba+ stable isotopes. Volume 26, pages 4289-4299. Table 1 (p. 4294): hyperfine A and B constants for 6p 2P1/2 and 6p 2P3/2 — most precise available for these levels. Table 2 (p. 4295): isotope shifts for transitions at 649.7 nm (5d 2D3/2 -> 6p 2P1/2), 614.2 nm (5d 2D5/2 -> 6p 2P3/2), and 585.4 nm (5d 2D3/2 -> 6p 2P3/2). Villemoes sign convention: delta_nu = nu_138 - nu_A (positive for heavier isotopes), which is OPPOSITE to DB convention (nu_A - nu_138). Values stored here are negated from the paper. Isotopes covered: 134, 135, 136, 137, 138.",
+      "data_types": ["hyperfine_constant", "isotope_shift"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "configuration": "6p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 0.5,
+      "parity": "odd", "energy_cm1": 20261.56,
+      "hyperfine_A_MHz": 664.6,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 4294",
+        "hyperfine_A_uncertainty_MHz": 0.3,
+        "notes": "J=1/2 so B=0 by symmetry. Most precise measurement available for Ba-135 6p 2P1/2."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "configuration": "6p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 1.5,
+      "parity": "odd", "energy_cm1": 21952.40,
+      "hyperfine_A_MHz": 113.0,
+      "hyperfine_B_MHz": 59.0,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 4294",
+        "hyperfine_A_uncertainty_MHz": 0.1,
+        "hyperfine_B_uncertainty_MHz": 0.1,
+        "notes": "Most precise measurement available for Ba-135 6p 2P3/2."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "configuration": "6p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 0.5,
+      "parity": "odd", "energy_cm1": 20261.56,
+      "hyperfine_A_MHz": 743.7,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 4294",
+        "hyperfine_A_uncertainty_MHz": 0.3,
+        "notes": "J=1/2 so B=0 by symmetry. Most precise measurement available for Ba-137 6p 2P1/2."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "configuration": "6p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 1.5,
+      "parity": "odd", "energy_cm1": 21952.40,
+      "hyperfine_A_MHz": 127.2,
+      "hyperfine_B_MHz": 92.5,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 4294",
+        "hyperfine_A_uncertainty_MHz": 0.2,
+        "hyperfine_B_uncertainty_MHz": 0.2,
+        "notes": "Most precise measurement available for Ba-137 6p 2P3/2."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 134,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 1.5,
+      "wavelength_nm": 649.7,
+      "isotope_shift_MHz": 174.5, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.8,
+        "notes": "Sign negated from Villemoes convention (delta_nu = nu_138 - nu_A) to DB convention (nu_A - nu_138). Less complete than Hucul et al. 2017 (more isotopes)."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 1.5,
+      "wavelength_nm": 649.7,
+      "isotope_shift_MHz": 82.7, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.6,
+        "notes": "Centroid shift for odd isotope. Sign negated from Villemoes convention. Less complete than Hucul et al. 2017."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 136,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 1.5,
+      "wavelength_nm": 649.7,
+      "isotope_shift_MHz": 68.0, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.5,
+        "notes": "Sign negated from Villemoes convention. Less complete than Hucul et al. 2017."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 1.5,
+      "wavelength_nm": 649.7,
+      "isotope_shift_MHz": -13.0, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.4,
+        "notes": "Centroid shift for odd isotope. Sign negated from Villemoes convention. Less complete than Hucul et al. 2017."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 134,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 2.5,
+      "wavelength_nm": 614.2,
+      "isotope_shift_MHz": 192.1, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.7,
+        "notes": "Sign negated from Villemoes convention. Primary high-resolution measurement of 614.2 nm transition isotope shifts."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 2.5,
+      "wavelength_nm": 614.2,
+      "isotope_shift_MHz": 101.4, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.8,
+        "notes": "Centroid shift for odd isotope. Sign negated from Villemoes convention."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 136,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 2.5,
+      "wavelength_nm": 614.2,
+      "isotope_shift_MHz": 78.7, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.6,
+        "notes": "Sign negated from Villemoes convention."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 2.5,
+      "wavelength_nm": 614.2,
+      "isotope_shift_MHz": -2.3, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.4,
+        "notes": "Centroid shift for odd isotope. Sign negated from Villemoes convention."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 134,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 1.5,
+      "wavelength_nm": 585.4,
+      "isotope_shift_MHz": 188.1, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.6,
+        "notes": "Sign negated from Villemoes convention. Primary high-resolution measurement of 585.4 nm transition isotope shifts."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 1.5,
+      "wavelength_nm": 585.4,
+      "isotope_shift_MHz": 97.0, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.7,
+        "notes": "Centroid shift for odd isotope. Sign negated from Villemoes convention."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 136,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 1.5,
+      "wavelength_nm": 585.4,
+      "isotope_shift_MHz": 76.3, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.4,
+        "notes": "Sign negated from Villemoes convention."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "5d", "lower_term": "2D", "lower_J": 1.5,
+      "wavelength_nm": 585.4,
+      "isotope_shift_MHz": -5.3, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and isotope shifts of Ba+ by fast-beam laser spectroscopy",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 4295",
+        "isotope_shift_uncertainty_MHz": 0.5,
+        "notes": "Centroid shift for odd isotope. Sign negated from Villemoes convention."
+      }
+    }
+  }
+]

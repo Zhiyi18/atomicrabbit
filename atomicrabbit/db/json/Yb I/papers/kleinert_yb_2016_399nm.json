@@ -1,0 +1,368 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Isotope shifts and hyperfine structure in the 399-nm 1S0-1P1 transition in ytterbium",
+      "authors": "Kleinert, M.; Dahl, M. E. G.; Bergeson, S.",
+      "year": 2016,
+      "doi": "10.1103/PhysRevA.94.052511",
+      "journal": "Physical Review A",
+      "notes": "arXiv:1609.02218v2. Isotope shifts for all stable Yb isotopes on the 399nm 1S0->1P1 line relative to 174Yb, measured using an optical frequency comb. Also provides A(1P1, 171Yb) = -212.33(30) MHz (Table 5). Absolute frequency of 174Yb: 751526533.49(33) MHz (Section V.3). 173Yb F=3/2 component not resolved; A(1P1, 173Yb) derived from F=5/2 and F=7/2 components in Table 3.",
+      "data_types": ["isotope_shift", "hyperfine_constant"]
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 168,
+      "nuclear_spin": 0.0, "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 170,
+      "nuclear_spin": 0.0, "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "nuclear_spin": 0.5, "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 172,
+      "nuclear_spin": 0.0, "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 173,
+      "nuclear_spin": 2.5, "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "nuclear_spin": 0.0, "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 176,
+      "nuclear_spin": 0.0, "mu_I": null
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 168,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 170,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 172,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 173,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 176,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 168,
+      "configuration": "6s6p", "term_symbol": "1P", "L": 1, "S": 0.0, "J": 1.0,
+      "parity": "odd",
+      "energy_cm1": 25068.290,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 3, Section V.2 and V.3",
+        "isotope_shift_from_174Yb_MHz": 1888.80,
+        "isotope_shift_uncertainty_MHz": 0.11,
+        "energy_cm1_note": "derived from 174Yb absolute frequency 751526533.49 MHz + isotope shift"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 170,
+      "configuration": "6s6p", "term_symbol": "1P", "L": 1, "S": 0.0, "J": 1.0,
+      "parity": "odd",
+      "energy_cm1": 25068.266,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 3, Section V.2",
+        "isotope_shift_from_174Yb_MHz": 1190.36,
+        "isotope_shift_uncertainty_MHz": 0.49,
+        "energy_cm1_note": "derived from 174Yb absolute frequency + isotope shift"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "configuration": "6s6p", "term_symbol": "1P", "L": 1, "S": 0.0, "J": 1.0,
+      "parity": "odd",
+      "energy_cm1": 25068.258,
+      "hyperfine_A_MHz": -212.33,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 3 (component shifts), Table 5 (A constant), Section V.2-V.3",
+        "hyperfine_A_uncertainty_MHz": 0.30,
+        "cog_shift_from_174Yb_MHz": 941.35,
+        "cog_shift_uncertainty_MHz": 0.16,
+        "component_F_half_shift_MHz": 1153.68,
+        "component_F_half_uncertainty_MHz": 0.25,
+        "component_F_threehalf_shift_MHz": 835.19,
+        "component_F_threehalf_uncertainty_MHz": 0.20,
+        "energy_cm1_note": "derived from 174Yb absolute frequency + COG shift; COG computed from F=1/2 and F=3/2 component shifts"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 172,
+      "configuration": "6s6p", "term_symbol": "1P", "L": 1, "S": 0.0, "J": 1.0,
+      "parity": "odd",
+      "energy_cm1": 25068.245,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 3, Section V.2",
+        "isotope_shift_from_174Yb_MHz": 531.11,
+        "isotope_shift_uncertainty_MHz": 0.09,
+        "energy_cm1_note": "derived from 174Yb absolute frequency + isotope shift"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 173,
+      "configuration": "6s6p", "term_symbol": "1P", "L": 1, "S": 0.0, "J": 1.0,
+      "parity": "odd",
+      "energy_cm1": 25068.226,
+      "hyperfine_A_MHz": 240.15,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 3, Section V.2",
+        "hyperfine_A_uncertainty_MHz": 0.12,
+        "hyperfine_A_note": "derived from F=7/2 (589.75 MHz) and F=5/2 (-250.78 MHz) component shifts; F=3/2 not resolved. A = 2*(589.75-(-250.78))/7 = 240.15 MHz",
+        "cog_shift_from_174Yb_MHz": -10.63,
+        "cog_shift_uncertainty_MHz": 0.38,
+        "cog_shift_note": "derived from F=7/2 component shift minus 5A/2",
+        "component_F_fivehalf_shift_MHz": -250.78,
+        "component_F_fivehalf_uncertainty_MHz": 0.33,
+        "component_F_sevenhalf_shift_MHz": 589.75,
+        "component_F_sevenhalf_uncertainty_MHz": 0.24,
+        "energy_cm1_note": "derived from 174Yb absolute frequency + COG shift"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "configuration": "6s6p", "term_symbol": "1P", "L": 1, "S": 0.0, "J": 1.0,
+      "parity": "odd",
+      "energy_cm1": 25068.227,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Section V.3",
+        "absolute_frequency_MHz": 751526533.49,
+        "absolute_frequency_uncertainty_MHz": 0.33,
+        "energy_cm1_note": "derived from absolute frequency 751526533.49(33) MHz / c"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 176,
+      "configuration": "6s6p", "term_symbol": "1P", "L": 1, "S": 0.0, "J": 1.0,
+      "parity": "odd",
+      "energy_cm1": 25068.210,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 3, Section V.2",
+        "isotope_shift_from_174Yb_MHz": -508.89,
+        "isotope_shift_uncertainty_MHz": 0.09,
+        "energy_cm1_note": "derived from 174Yb absolute frequency + isotope shift"
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 168,
+      "upper_config": "6s6p", "upper_term": "1P", "upper_J": 1.0,
+      "lower_config": "6s2", "lower_term": "1S", "lower_J": 0.0,
+      "wavelength_nm": 398.9,
+      "isotope_shift_MHz": 1888.80, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {"source_page": "Table 3, Section V.2", "isotope_shift_uncertainty_MHz": 0.11}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 170,
+      "upper_config": "6s6p", "upper_term": "1P", "upper_J": 1.0,
+      "lower_config": "6s2", "lower_term": "1S", "lower_J": 0.0,
+      "wavelength_nm": 398.9,
+      "isotope_shift_MHz": 1190.36, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {"source_page": "Table 3, Section V.2", "isotope_shift_uncertainty_MHz": 0.49}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "upper_config": "6s6p", "upper_term": "1P", "upper_J": 1.0,
+      "lower_config": "6s2", "lower_term": "1S", "lower_J": 0.0,
+      "wavelength_nm": 398.9,
+      "isotope_shift_MHz": 941.35, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 3, Section V.2",
+        "isotope_shift_uncertainty_MHz": 0.16,
+        "note": "center-of-gravity shift derived from F=1/2 (1153.68 MHz) and F=3/2 (835.19 MHz) component shifts"
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 172,
+      "upper_config": "6s6p", "upper_term": "1P", "upper_J": 1.0,
+      "lower_config": "6s2", "lower_term": "1S", "lower_J": 0.0,
+      "wavelength_nm": 398.9,
+      "isotope_shift_MHz": 531.11, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {"source_page": "Table 3, Section V.2", "isotope_shift_uncertainty_MHz": 0.09}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 173,
+      "upper_config": "6s6p", "upper_term": "1P", "upper_J": 1.0,
+      "lower_config": "6s2", "lower_term": "1S", "lower_J": 0.0,
+      "wavelength_nm": 398.9,
+      "isotope_shift_MHz": -10.63, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 3, Section V.2",
+        "isotope_shift_uncertainty_MHz": 0.38,
+        "note": "center-of-gravity shift derived from F=5/2 (-250.78 MHz) and F=7/2 (589.75 MHz) component shifts; F=3/2 not resolved by Kleinert et al."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "upper_config": "6s6p", "upper_term": "1P", "upper_J": 1.0,
+      "lower_config": "6s2", "lower_term": "1S", "lower_J": 0.0,
+      "wavelength_nm": 398.9,
+      "isotope_shift_MHz": 0.0, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Section V.3",
+        "note": "reference isotope; absolute frequency 751526533.49(33) MHz"
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 176,
+      "upper_config": "6s6p", "upper_term": "1P", "upper_J": 1.0,
+      "lower_config": "6s2", "lower_term": "1S", "lower_J": 0.0,
+      "wavelength_nm": 398.9,
+      "isotope_shift_MHz": -508.89, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.94.052511",
+      "is_recommended": 1,
+      "properties": {"source_page": "Table 3, Section V.2", "isotope_shift_uncertainty_MHz": 0.09}
+    }
+  }
+]

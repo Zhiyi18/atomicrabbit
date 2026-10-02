@@ -31,16 +31,20 @@ class Transition(FineTransition):
     
     @property
     def reduced_dipole(self):
-        if self.A is None:
+        if self.frequency == 0:
+            return 0
+        
+        elif self.A is None:
             raise ValueError(
                 'Einstein coefficient is required to calculate the transition dipole element.'
                 )
-            
-        d_ij = np.sqrt(
-            3 * np.pi * epsilon_0 * hbar * c**3 * self.A
-            / self.frequency**3
-            )
-        return d_ij
+
+        else:
+            d_ij = np.sqrt(
+                3 * np.pi * epsilon_0 * hbar * c**3 * self.A
+                / self.frequency**3
+                )
+            return d_ij
     
     @property
     def hyperfine_factor(self):
@@ -161,6 +165,10 @@ class Transition(FineTransition):
             raise ValueError(
                 "Branching amplitudes require ZeemanState or FineState."
             )
+            
+        print(f'{self.lower.spectroscopic_name}-{self.upper.spectroscopic_name}')
+        print(f'hyperfine factor = {self.hyperfine_factor}')
+        print(f'angular factor = {self.angular_factor(q)}')
     
         return self.hyperfine_factor * self.angular_factor(q)
 

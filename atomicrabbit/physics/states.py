@@ -95,7 +95,9 @@ class HyperfineState:
         if self.I == 0 or self.I == None:
             return 0
         else:
-            return self.mu_I / (mu_N * self.I)
+            # mu_I is stored in nuclear magnetons; convert to Bohr magneton scale
+            # so that gF * mu_B gives the correct Zeeman energy in Joules
+            return (self.mu_I / self.I) * (mu_N / mu_B)
     
     @property
     def A_hyperfine(self):
@@ -138,24 +140,25 @@ class HyperfineState:
 
         C = F * (F + 1) - I * (I + 1) - J * (J + 1)
     
-        # Magnetic dipole term
+        # Magnetic dipole term (A in MHz)
         delta_E = 0.5 * A * C
-    
-        # Electric quadrupole term
+
+        # Electric quadrupole term (B in MHz)
         if B != None and I > 0.5 and J > 0.5:
             numerator = (
                 1.5 * C * (C + 1)
                 - 2 * I * (I + 1) * J * (J + 1)
             )
-    
+
             denominator = (
                 I * (2 * I - 1)
                 * J * (2 * J - 1)
             )
-    
+
             delta_E += (B / 4) * numerator / denominator
-    
-        return delta_E
+
+        # Convert MHz -> cm^-1 so energy_cm stays in consistent units
+        return delta_E * 1e6 / (c * 100)
     
     @property
     def energy_cm(self):
@@ -206,8 +209,9 @@ class ZeemanState:
             
     @property
     def zeeman_shift(self):
+        # mu_B * gF * mF * B is in Joules; convert to cm^-1 for consistent energy_cm
         delta_E = mu_B * self.gF * self.mF * self.B
-        return delta_E
+        return delta_E / (h * c * 100)
     
     @property
     def energy_cm(self):

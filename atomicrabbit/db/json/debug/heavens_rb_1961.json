@@ -1,0 +1,38 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Radiative Transition Probabilities of the Lower Excited States of the Alkali Metals",
+      "authors": "Heavens, O. S.",
+      "year": 1961,
+      "doi": "10.0000/test.heavens.alkali.1961",
+      "journal": "Journal of the Optical Society of America",
+      "notes": "Early measurement; A coefficients less precise than modern values. Conflicts with steck_rb87_2001 on D1 and D2.",
+      "data_types": ["transition"]
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Rb", "mass_number": 87,
+      "upper_config": "5p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "5s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 780.2,
+      "einstein_A_s1": 3.70e7,
+      "source_type": "paper", "source_doi": "10.0000/test.heavens.alkali.1961",
+      "is_recommended": 0
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Rb", "mass_number": 87,
+      "upper_config": "5p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "5s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 794.9,
+      "einstein_A_s1": 3.52e7,
+      "source_type": "paper", "source_doi": "10.0000/test.heavens.alkali.1961",
+      "is_recommended": 0
+    }
+  }
+]

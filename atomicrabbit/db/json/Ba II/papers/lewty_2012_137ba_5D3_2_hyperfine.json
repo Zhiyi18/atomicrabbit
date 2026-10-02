@@ -1,0 +1,54 @@
+[
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "nuclear_spin": 1.5,
+      "mu_I": 0.937365
+    }
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Spectroscopy on a single trapped 137Ba+ ion for nuclear magnetic octupole moment determination",
+      "authors": "Lewty, N. C.; Chuah, B. L.; Cazan, R.; Sahoo, B. K.; Barrett, M. D.",
+      "year": 2012,
+      "doi": "10.1364/OE.20.021379",
+      "journal": "Optics Express",
+      "notes": "Precision RF spectroscopy of a single trapped 137Ba+ ion in the 5d 2D3/2 manifold. Hyperfine A, B, C constants from Table 3. Values represent a 30-fold reduction in uncertainty compared to prior work. This paper reports the first observation of the magnetic octupole moment C in 137Ba+. Note: the 2013 PRA paper (doi:10.1103/PhysRevA.88.012518) by the same group reports slightly revised values with additional second-order corrections applied.",
+      "data_types": ["hyperfine_constant"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "configuration": "5d",
+      "term_symbol": "2D",
+      "L": 2,
+      "S": 0.5,
+      "J": 1.5,
+      "parity": "even",
+      "energy_cm1": 4873.852,
+      "hyperfine_A_MHz": 189.731101,
+      "hyperfine_B_MHz": 44.536612,
+      "source_type": "paper",
+      "source_doi": "10.1364/OE.20.021379",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 3",
+        "hyperfine_A_uncertainty_MHz": 1.7e-5,
+        "hyperfine_B_uncertainty_MHz": 3.4e-5,
+        "hyperfine_A_Hz": 189731101,
+        "hyperfine_A_uncertainty_Hz": 17,
+        "hyperfine_B_Hz": 44536612,
+        "hyperfine_B_uncertainty_Hz": 34,
+        "hyperfine_C_Hz": 36.546,
+        "hyperfine_C_uncertainty_Hz": 0.086,
+        "notes": "is_recommended=0 because the 2013 PRA paper (doi:10.1103/PhysRevA.88.012518) gives revised values with additional corrections. Use that paper's values preferentially."
+      }
+    }
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 135, "nuclear_spin": 1.5, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 137, "nuclear_spin": 1.5, "mu_I": null}
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Hyperfine structure and nuclear magnetic moments of the stable barium isotopes",
+      "authors": "Trapp, S.; Marx, G.; Tommaseo, G.; Drakoudis, A.; Revalde, G.; Werth, G.; Becker, O.; Klempt, G.",
+      "year": 2000,
+      "doi": null,
+      "journal": "Hyperfine Interactions",
+      "notes": "Ion trap measurements of Ba+ ground state 6s 2S1/2 hyperfine structure and g-factors for 135Ba and 137Ba. Volume 127, pages 57-64. Table 1 (p. 60): hyperfine A constants for 6s 2S1/2 measured with highest precision. gI(135Ba) = 0.623876(3) measured via Penning trap at p. 62. The A constants are less precise than Blatt & Werth 1982 and Hucul et al. 2017 for Ba-137, but provide precision ground-state data for Ba-135. 6s 2S1/2 A constants are absolute frequency measurements.",
+      "data_types": ["hyperfine_constant"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "configuration": "6s", "term_symbol": "2S", "L": 0, "S": 0.5, "J": 0.5,
+      "parity": "even", "energy_cm1": 0.0,
+      "hyperfine_A_MHz": 3591.670117,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and nuclear magnetic moments of the stable barium isotopes",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 1, p. 60",
+        "hyperfine_A_uncertainty_MHz": 4.5e-7,
+        "hyperfine_A_Hz": 3591670117.45,
+        "hyperfine_A_uncertainty_Hz": 0.29,
+        "gI": 0.623876,
+        "gI_uncertainty": 3e-6,
+        "gI_source_page": "p. 62",
+        "notes": "gI from Penning trap measurement (p. 62). A constant is less precise than Hucul et al. 2017."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "configuration": "6s", "term_symbol": "2S", "L": 0, "S": 0.5, "J": 0.5,
+      "parity": "even", "energy_cm1": 0.0,
+      "hyperfine_A_MHz": 4018.870834,
+      "source_type": "paper", "source_doi": null, "source_title": "Hyperfine structure and nuclear magnetic moments of the stable barium isotopes",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 1, p. 60",
+        "hyperfine_A_uncertainty_MHz": 1.8e-7,
+        "hyperfine_A_Hz": 4018870833.85,
+        "hyperfine_A_uncertainty_Hz": 0.18,
+        "notes": "Superseded by Blatt & Werth 1982 and Hucul et al. 2017 for higher precision."
+      }
+    }
+  }
+]

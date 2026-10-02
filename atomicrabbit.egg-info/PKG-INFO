@@ -2,6 +2,8 @@ Metadata-Version: 2.4
 Name: atomicrabbit
 Version: 0.1.0
 Requires-Dist: qutip
+Requires-Dist: sympy
+Requires-Dist: networkx
 Provides-Extra: astro
 Requires-Dist: astroquery; extra == "astro"
 Provides-Extra: viz

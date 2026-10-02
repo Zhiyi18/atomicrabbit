@@ -1,0 +1,81 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Rubidium 87 D Line Data",
+      "authors": "Steck, D. A.",
+      "year": 2001,
+      "doi": "10.0000/test.steck.rb87.2001",
+      "journal": "Los Alamos National Laboratory Technical Report",
+      "notes": "Canonical reference for Rb-87 D-line parameters.",
+      "data_types": ["energy_level", "transition", "hyperfine_constant", "lifetime"]
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Rb",
+      "mass_number": 87,
+      "nuclear_spin": 1.5,
+      "mu_I": -1.8342,
+      "abundance": 0.2783
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Rb", "mass_number": 87,
+      "configuration": "5s", "term_symbol": "2S", "L": 0, "S": 0.5, "J": 0.5,
+      "parity": "even", "energy_cm1": 0.0,
+      "hyperfine_A_MHz": 3417.341,
+      "source_type": "paper", "source_doi": "10.0000/test.steck.rb87.2001",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Rb", "mass_number": 87,
+      "configuration": "5p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 0.5,
+      "parity": "odd", "energy_cm1": 12578.950,
+      "hyperfine_A_MHz": 408.328, "lifetime_s": 27.70e-9,
+      "source_type": "paper", "source_doi": "10.0000/test.steck.rb87.2001",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Rb", "mass_number": 87,
+      "configuration": "5p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 1.5,
+      "parity": "odd", "energy_cm1": 12816.545,
+      "hyperfine_A_MHz": 84.718, "hyperfine_B_MHz": 12.496, "lifetime_s": 26.24e-9,
+      "source_type": "paper", "source_doi": "10.0000/test.steck.rb87.2001",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Rb", "mass_number": 87,
+      "upper_config": "5p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "5s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 794.979, "frequency_THz": 377.107,
+      "einstein_A_s1": 3.617e7, "linewidth_MHz": 5.746,
+      "source_type": "paper", "source_doi": "10.0000/test.steck.rb87.2001",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Rb", "mass_number": 87,
+      "upper_config": "5p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "5s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 780.241, "frequency_THz": 384.230,
+      "einstein_A_s1": 3.813e7, "linewidth_MHz": 6.065,
+      "source_type": "paper", "source_doi": "10.0000/test.steck.rb87.2001",
+      "is_recommended": 1
+    }
+  }
+]

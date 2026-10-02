@@ -1,0 +1,257 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "A study of isotopically selective photoionization of ytterbium atoms for laser isotope separation",
+      "authors": "Borisov, S. K.; Kuz'mina, M. A.; Mishin, V. A.",
+      "year": 1996,
+      "doi": "10.1007/BF02073528",
+      "journal": "Journal of Russian Laser Research",
+      "notes": "Vol. 17, No. 4, pp. 332-345. Three-step AVLIS scheme: 6s2 1S0 -[555.648nm air]-> 6s6p 3P1 -[581.067nm air]-> (4f13 6s2 6p)(7/2,3/2)J=2 at 35196.98 cm^-1 -[582.79nm]-> autoionization at 52353 cm^-1. PRIMARY source of 581nm isotope shifts (Table 2, p.334-335): all-isotope shifts and 171/173Yb HFS components for the 6^3P1 -> (7/2,3/2)_2 transition, measured first in this paper. Table 1 (556nm isotope shifts) reproduces Broadhurst et al. 1974 and is attributed to that paper. Lifetime of (7/2,3/2)_2: 1.12+-0.05 us measured by luminescence dynamics (p.334). Dipole moment 6^3P1 -> (7/2,3/2)_2: 4.2e-30 C.m (p.334). Level energies from Martin, Zalubas, Hagan 1978 (ref [2]).",
+      "data_types": ["isotope_shift", "lifetime", "transition"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 168,
+      "configuration": "6s6p", "term_symbol": "3P", "L": 1, "S": 1.0, "J": 1.0,
+      "parity": "odd",
+      "energy_cm1": 17992.007,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "p. 333 (Section 2)",
+        "note": "Energy from Martin, Zalubas, Hagan 1978 via Borisov ref [2]. Inserted here as FK reference level for the 581nm transition; 168Yb not covered by atkinson_yb_2019. Isotope-specific energy correction ~+0.12 cm^-1 from Table 1 is not applied (Broadhurst 1974 data)."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 168,
+      "configuration": "4f13 6s2 6p", "term_symbol": "(7/2,3/2)", "L": null, "S": null, "J": 2.0,
+      "parity": "even",
+      "energy_cm1": 35196.98,
+      "lifetime_s": 1.12e-6,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "p. 334 (Section 2)",
+        "lifetime_s_uncertainty": 0.05e-6,
+        "lifetime_method": "luminescence dynamics (shut-off measurement)",
+        "jj_coupling": "(j_4f13=7/2, j_6p=3/2) J=2",
+        "note": "Energy from Martin, Zalubas, Hagan 1978 via Borisov ref [2]. Parity even: (-1)^(3*13+1*1)=(-1)^40=+1."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 170,
+      "configuration": "4f13 6s2 6p", "term_symbol": "(7/2,3/2)", "L": null, "S": null, "J": 2.0,
+      "parity": "even",
+      "energy_cm1": 35196.98,
+      "lifetime_s": 1.12e-6,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "p. 334 (Section 2)",
+        "lifetime_s_uncertainty": 0.05e-6,
+        "lifetime_method": "luminescence dynamics",
+        "jj_coupling": "(j_4f13=7/2, j_6p=3/2) J=2"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "configuration": "4f13 6s2 6p", "term_symbol": "(7/2,3/2)", "L": null, "S": null, "J": 2.0,
+      "parity": "even",
+      "energy_cm1": 35196.98,
+      "lifetime_s": 1.12e-6,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "p. 334 (Section 2)",
+        "lifetime_s_uncertainty": 0.05e-6,
+        "lifetime_method": "luminescence dynamics",
+        "jj_coupling": "(j_4f13=7/2, j_6p=3/2) J=2",
+        "note": "I=1/2; hyperfine F'=3/2 and F'=5/2 sublevels. A constant not measured in this paper."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 172,
+      "configuration": "4f13 6s2 6p", "term_symbol": "(7/2,3/2)", "L": null, "S": null, "J": 2.0,
+      "parity": "even",
+      "energy_cm1": 35196.98,
+      "lifetime_s": 1.12e-6,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "p. 334 (Section 2)",
+        "lifetime_s_uncertainty": 0.05e-6,
+        "lifetime_method": "luminescence dynamics",
+        "jj_coupling": "(j_4f13=7/2, j_6p=3/2) J=2"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 173,
+      "configuration": "4f13 6s2 6p", "term_symbol": "(7/2,3/2)", "L": null, "S": null, "J": 2.0,
+      "parity": "even",
+      "energy_cm1": 35196.98,
+      "lifetime_s": 1.12e-6,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "p. 334 (Section 2)",
+        "lifetime_s_uncertainty": 0.05e-6,
+        "lifetime_method": "luminescence dynamics",
+        "jj_coupling": "(j_4f13=7/2, j_6p=3/2) J=2",
+        "note": "I=5/2; hyperfine F'=1/2,3/2,5/2,7/2,9/2 sublevels. A constant not measured in this paper."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 176,
+      "configuration": "4f13 6s2 6p", "term_symbol": "(7/2,3/2)", "L": null, "S": null, "J": 2.0,
+      "parity": "even",
+      "energy_cm1": 35196.98,
+      "lifetime_s": 1.12e-6,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "p. 334 (Section 2)",
+        "lifetime_s_uncertainty": 0.05e-6,
+        "lifetime_method": "luminescence dynamics",
+        "jj_coupling": "(j_4f13=7/2, j_6p=3/2) J=2"
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 168,
+      "upper_config": "4f13 6s2 6p", "upper_term": "(7/2,3/2)", "upper_J": 2.0,
+      "lower_config": "6s6p", "lower_term": "3P", "lower_J": 1.0,
+      "wavelength_nm": null,
+      "isotope_shift_MHz": -10293, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 334-335",
+        "upper_F": 2, "lower_F": 1,
+        "transition_air_wavelength_nm": 581.067,
+        "note": "Boson I=0: single component F'=2 -> F=1. Shift relative to 174Yb F'=2->F=1 line."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 170,
+      "upper_config": "4f13 6s2 6p", "upper_term": "(7/2,3/2)", "upper_J": 2.0,
+      "lower_config": "6s6p", "lower_term": "3P", "lower_J": 1.0,
+      "wavelength_nm": null,
+      "isotope_shift_MHz": -6318, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 334-335",
+        "upper_F": 2, "lower_F": 1,
+        "note": "Boson I=0: single component F'=2 -> F=1."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "upper_config": "4f13 6s2 6p", "upper_term": "(7/2,3/2)", "upper_J": 2.0,
+      "lower_config": "6s6p", "lower_term": "3P", "lower_J": 1.0,
+      "wavelength_nm": null,
+      "isotope_shift_MHz": null, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 334-335",
+        "note": "I=1/2; three HFS components measured. Shifts relative to 174Yb F'=2->F=1 line. isotope_shift_MHz is null because the center-of-gravity shift is not given in the paper.",
+        "hfs_components_MHz": [
+          {"F_upper": 3.5, "F_lower": 1.5, "delta_nu_MHz": -8805},
+          {"F_upper": 2.5, "F_lower": 1.5, "delta_nu_MHz": -5973},
+          {"F_upper": 1.5, "F_lower": 0.5, "delta_nu_MHz": -2862}
+        ]
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 172,
+      "upper_config": "4f13 6s2 6p", "upper_term": "(7/2,3/2)", "upper_J": 2.0,
+      "lower_config": "6s6p", "lower_term": "3P", "lower_J": 1.0,
+      "wavelength_nm": null,
+      "isotope_shift_MHz": -2711, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 334-335",
+        "upper_F": 2, "lower_F": 1,
+        "note": "Boson I=0: single component F'=2 -> F=1."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 173,
+      "upper_config": "4f13 6s2 6p", "upper_term": "(7/2,3/2)", "upper_J": 2.0,
+      "lower_config": "6s6p", "lower_term": "3P", "lower_J": 1.0,
+      "wavelength_nm": null,
+      "isotope_shift_MHz": null, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 334-335",
+        "note": "I=5/2; nine HFS components measured from lower F=3/2,5/2,7/2 to upper F'=1/2,...,9/2. Shifts relative to 174Yb F'=2->F=1 line. isotope_shift_MHz is null because COG shift not given.",
+        "hfs_components_MHz": [
+          {"F_upper": 0.5, "F_lower": 1.5, "delta_nu_MHz": -4147},
+          {"F_upper": 1.5, "F_lower": 1.5, "delta_nu_MHz": -3612},
+          {"F_upper": 2.5, "F_lower": 1.5, "delta_nu_MHz": -3302},
+          {"F_upper": 3.5, "F_lower": 2.5, "delta_nu_MHz": -2532},
+          {"F_upper": 1.5, "F_lower": 2.5, "delta_nu_MHz": -2426},
+          {"F_upper": 2.5, "F_lower": 2.5, "delta_nu_MHz": -1833},
+          {"F_upper": 4.5, "F_lower": 3.5, "delta_nu_MHz": -732},
+          {"F_upper": 3.5, "F_lower": 3.5, "delta_nu_MHz": 2172},
+          {"F_upper": 2.5, "F_lower": 3.5, "delta_nu_MHz": 2894}
+        ]
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 176,
+      "upper_config": "4f13 6s2 6p", "upper_term": "(7/2,3/2)", "upper_J": 2.0,
+      "lower_config": "6s6p", "lower_term": "3P", "lower_J": 1.0,
+      "wavelength_nm": null,
+      "isotope_shift_MHz": 2578, "isotope_shift_ref_mass": 174,
+      "source_type": "paper", "source_doi": "10.1007/BF02073528",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 334-335",
+        "upper_F": 2, "lower_F": 1,
+        "note": "Boson I=0: single component F'=2 -> F=1."
+      }
+    }
+  }
+]

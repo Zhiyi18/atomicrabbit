@@ -1,0 +1,61 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Dynamic Polarizability and Magic Wavelengths of Caesium",
+      "authors": "Arora, B. et al.",
+      "year": 2007,
+      "doi": "10.0000/test.arora.cs.2007",
+      "journal": "Physical Review A",
+      "notes": "Reports scalar polarizability and magic wavelengths — not in schema, packed into properties.",
+      "data_types": ["transition", "other"]
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Cs",
+      "mass_number": 133,
+      "nuclear_spin": 3.5,
+      "mu_I": 2.5820,
+      "abundance": 1.0
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Cs", "mass_number": 133,
+      "configuration": "6s", "term_symbol": "2S", "L": 0, "S": 0.5, "J": 0.5,
+      "parity": "even", "energy_cm1": 0.0,
+      "hyperfine_A_MHz": 2298.158,
+      "source_type": "paper", "source_doi": "10.0000/test.arora.cs.2007",
+      "is_recommended": 0,
+      "properties": {"scalar_polarizability_au": 401.0}
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Cs", "mass_number": 133,
+      "configuration": "6p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 1.5,
+      "parity": "odd", "energy_cm1": 11732.307,
+      "hyperfine_A_MHz": 50.275, "hyperfine_B_MHz": -0.498,
+      "source_type": "paper", "source_doi": "10.0000/test.arora.cs.2007",
+      "is_recommended": 0,
+      "properties": {"scalar_polarizability_au": 1010.0}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Cs", "mass_number": 133,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 852.347, "frequency_THz": 351.726,
+      "einstein_A_s1": 3.276e7, "linewidth_MHz": 5.213,
+      "source_type": "paper", "source_doi": "10.0000/test.arora.cs.2007",
+      "is_recommended": 0,
+      "properties": {"magic_wavelength_nm": 935.0, "magic_wavelength_nm_2": 1142.0}
+    }
+  }
+]

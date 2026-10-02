@@ -1,0 +1,48 @@
+[
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "nuclear_spin": 1.5,
+      "mu_I": 0.937365
+    }
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Precision determination of the ground-state hyperfine splitting in 137Ba+ using the ion-storage technique",
+      "authors": "Blatt, R.; Werth, G.",
+      "year": 1982,
+      "doi": "10.1103/PhysRevA.25.1476",
+      "journal": "Physical Review A",
+      "notes": "RF quadrupole ion trap measurement of the ground-state hyperfine splitting of 137Ba+. About 10^5 ions stored, hyperfine pumping by pulsed tunable dye laser, microwave transitions between Zeeman sublevels induced and detected via fluorescence. Result: Whfs = 8037741667.69(0.36) Hz (precision 4.6e-11). This corresponds to A(6s 2S1/2) = Whfs/2 = 4018870833.85(0.18) Hz = 4018.87083385(18) MHz. Uncertainty split equally from extrapolation to zero electric field and zero magnetic field.",
+      "data_types": ["hyperfine_constant"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "configuration": "6s",
+      "term_symbol": "2S",
+      "L": 0,
+      "S": 0.5,
+      "J": 0.5,
+      "parity": "even",
+      "energy_cm1": 0.0,
+      "hyperfine_A_MHz": 4018.87083385,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevA.25.1476",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "p. 1476-1482 (result on p. 1480)",
+        "hyperfine_A_uncertainty_MHz": 1.8e-7,
+        "ground_state_HFS_Hz": 8037741667.69,
+        "ground_state_HFS_uncertainty_Hz": 0.36,
+        "notes": "A = Whfs/2 = 8037741667.69(0.36) Hz / 2. For I=3/2, J=1/2: delta_E(F=2->F=1) = 2A. The same value is reproduced in Hucul et al. 2017 (doi:10.1103/PhysRevLett.119.100501) Table 1."
+      }
+    }
+  }
+]

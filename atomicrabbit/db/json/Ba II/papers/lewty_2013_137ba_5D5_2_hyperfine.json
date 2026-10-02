@@ -1,0 +1,85 @@
+[
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "nuclear_spin": 1.5,
+      "mu_I": 0.937365
+    }
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Experimental determination of the nuclear magnetic octupole moment of 137Ba+ ion",
+      "authors": "Lewty, N. C.; Chuah, B. L.; Cazan, R.; Barrett, M. D.; Sahoo, B. K.",
+      "year": 2013,
+      "doi": "10.1103/PhysRevA.88.012518",
+      "journal": "Physical Review A",
+      "notes": "Precision RF spectroscopy of a single trapped 137Ba+ ion. Reports hyperfine A, B, C constants for both 5D5/2 (Table 2) and 5D3/2 (Table 6, Appendix C) manifolds with Hz-level accuracy. Corrections for second-order hyperfine perturbations applied. Nuclear magnetic dipole moment mu_I = 0.937365(20) mu_N cited (from Werth, Physica Scripta T59, 206, 1995). Also reports nuclear magnetic octupole moment.",
+      "data_types": ["hyperfine_constant"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "configuration": "5d",
+      "term_symbol": "2D",
+      "L": 2,
+      "S": 0.5,
+      "J": 2.5,
+      "parity": "even",
+      "energy_cm1": 5674.8,
+      "hyperfine_A_MHz": -12.029234,
+      "hyperfine_B_MHz": 59.52552,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevA.88.012518",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 2, p. 8",
+        "hyperfine_A_uncertainty_MHz": 1.1e-5,
+        "hyperfine_B_uncertainty_MHz": 1.1e-4,
+        "hyperfine_A_Hz": -12029234,
+        "hyperfine_A_uncertainty_Hz": 11,
+        "hyperfine_B_Hz": 59525520,
+        "hyperfine_B_uncertainty_Hz": 110,
+        "hyperfine_C_Hz": -12.41,
+        "hyperfine_C_uncertainty_Hz": 0.77,
+        "notes": "Corrected for second-order hyperfine perturbations (eta and zeta corrections applied). J=5/2 so B constant valid."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "configuration": "5d",
+      "term_symbol": "2D",
+      "L": 2,
+      "S": 0.5,
+      "J": 1.5,
+      "parity": "even",
+      "energy_cm1": 4873.852,
+      "hyperfine_A_MHz": 189.731494,
+      "hyperfine_B_MHz": 44.537594,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevA.88.012518",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 6, Appendix C, p. 15",
+        "hyperfine_A_uncertainty_MHz": 1.7e-5,
+        "hyperfine_B_uncertainty_MHz": 3.4e-5,
+        "hyperfine_A_Hz": 189731494,
+        "hyperfine_A_uncertainty_Hz": 17,
+        "hyperfine_B_Hz": 44537594,
+        "hyperfine_B_uncertainty_Hz": 34,
+        "hyperfine_C_Hz": 29.533,
+        "hyperfine_C_uncertainty_Hz": 0.086,
+        "notes": "Corrected for second-order hyperfine perturbations. J=3/2 so B constant valid. These 5D3/2 values supersede Lewty et al. 2012 (OE 20, 21379) which gives slightly different values; the 2013 PRA paper includes additional corrections."
+      }
+    }
+  }
+]

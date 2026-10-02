@@ -1,0 +1,32 @@
+[
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "nuclear_spin": 1.5,
+      "mu_I": 0.8381
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "nuclear_spin": 1.5,
+      "mu_I": 0.937365
+    }
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Table of nuclear magnetic dipole and electric quadrupole moments",
+      "authors": "Stone, N. J.",
+      "year": 2005,
+      "doi": "10.1016/j.adt.2005.04.001",
+      "journal": "Atomic Data and Nuclear Data Tables",
+      "notes": "Reference compilation of nuclear magnetic dipole and electric quadrupole moments. Used as the primary source of mu_I values for Ba-135 and Ba-137 in the literature (e.g. cited as ref [45] in arXiv:2512.07603v2 for mu(137Ba)=0.937365 mu_N). Volume 90, pages 75-176 (2005). NOTE: Full text not directly accessed. mu_I values assigned here come from: (1) Lewty et al. 2013 (arXiv HTML 1305.4453v2, eq.22) which explicitly states mu(137Ba)=0.937365(20) mu_N citing Werth 1995; (2) ChemLin isotope database (chemlin.org) for 135Ba gives mu=+0.8381(2) mu_N; These are consistent with Stone 2005 compilation.",
+      "data_types": []
+    }
+  }
+]

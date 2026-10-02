@@ -19,7 +19,103 @@ class Atom:
     B: Optional[float] = 0
     
     # def load_transition(self, table):
-        
+
+    @classmethod
+    def make_atom(cls, element, mass_number, db_path, laser_list, B=0):
+        """
+        Construct an Atom from spectroscopy.db, replacing hand-coded FineState/Transition setup.
+        Usage: Yb174 = Atom.make_atom('Yb', 174, db_path, laser_list, B=1e-4)
+
+        Loads is_recommended energy levels for the isotope (energies and hyperfine
+        constants from paper sources) and matches them to NIST A coefficients by
+        energy proximity (isotope shifts are <0.01 cm⁻¹, so a 1 cm⁻¹ tolerance is safe).
+
+        Parameters
+        ----------
+        element : str           Element symbol, e.g. 'Yb'.
+        mass_number : int       Isotope mass number, e.g. 174.
+        db_path : str           Path to spectroscopy.db.
+        laser_list : list       List of Laser objects for the simulation.
+        B : float               Magnetic field in Tesla.
+
+        Returns
+        -------
+        Atom
+        """
+        import sqlite3 as _sqlite3
+        from atomicrabbit.db import queries as _q
+
+        conn = _sqlite3.connect(db_path)
+        conn.row_factory = _sqlite3.Row
+        try:
+            atom_props = _q.get_atom_properties(conn, element, mass_number)
+            state_rows = _q.get_fine_states(conn, element, mass_number)
+            nist_rows  = _q.get_nist_transitions(conn, element)
+        finally:
+            conn.close()
+
+        # Build FineState objects keyed by (J, energy_cm1).
+        # Multiple papers may contribute the same level; keep only the first seen.
+        # For jj-coupled states (L or S is None in DB), fall back to L=S=0 — gJ
+        # will be approximate but those states have no NIST A coefficient anyway.
+        seen = set()
+        state_map = {}
+        for r in state_rows:
+            key = (float(r["J"]), float(r["energy_cm1"]))
+            if key in seen:
+                continue
+            seen.add(key)
+            L = float(r["L"]) if r["L"] is not None else 0.0
+            S = float(r["S"]) if r["S"] is not None else 0.0
+            J = float(r["J"])
+            # J=0 states have no electronic angular momentum so A=B=0 always.
+            # hyperfine_split raises if both are None, so supply 0.0 explicitly.
+            A_hf = r["hyperfine_A_MHz"] if J > 0 else 0.0
+            B_hf = r["hyperfine_B_MHz"] if J > 0 else 0.0
+            fs = states.FineState(
+                configuration=r["configuration"],
+                L=L,
+                S=S,
+                J=J,
+                energy_cm=float(r["energy_cm1"]),
+                parity=r["parity"],
+                A_hyperfine=A_hf,
+                B_hyperfine=B_hf,
+            )
+            state_map[key] = fs
+
+        def _find_state(J, E, tol=1.0):
+            J, E = float(J), float(E)
+            for (sJ, sE), fs in state_map.items():
+                if sJ == J and abs(sE - E) < tol:
+                    return fs
+            return None
+
+        transition_list = []
+        for t in nist_rows:
+            lower = _find_state(t["lower_J"], t["lower_E"])
+            upper = _find_state(t["upper_J"], t["upper_E"])
+            if lower is None or upper is None:
+                continue
+            transition_list.append(transitions.FineTransition(
+                lower=lower,
+                upper=upper,
+                A=float(t["einstein_A_s1"]),
+            ))
+
+        I    = float(atom_props.get("nuclear_spin") or 0)
+        mu_I = float(atom_props.get("mu_I") or 0)
+
+        return cls(
+            species=f"{element} I",
+            isotope=str(mass_number),
+            transition_list=transition_list,
+            laser_list=laser_list,
+            I=I,
+            mu_I=mu_I,
+            B=B,
+        )
+
     def add_fine_states(self):
         fine_states = set()
         for transition in self.transition_list:
@@ -41,40 +137,6 @@ class Atom:
         index = {s: i for i, s in enumerate(states)}
         return states, index
     
-    '''
-    # improve this later
-    def zeeman_transitions(self):
-        zeeman_transitions = []
-        if self.I == 0:
-            for transition in self.transition_list:
-                lower_states = states.zeeman_split(transition.lower, self.B)
-                upper_states = states.zeeman_split(transition.upper, self.B)
-                for state1 in lower_states:
-                    for state2 in upper_states:
-                        zeeman_transitions.append(transitions.Transition(
-                            lower = state1,
-                            upper = state2,
-                            A = transition.A,
-                            linewidth = transition.linewidth,
-                            lifetime = transition.lifetime
-                            ))
-                        
-        else:
-            for transition in self.transition_list:
-                lower_states = states.batch_zeeman_split(states.hyperfine_split(transition.lower, I = self.I, mu_I = self.mu_I), self.B)
-                upper_states = states.batch_zeeman_split(states.hyperfine_split(transition.upper, I = self.I, mu_I = self.mu_I), self.B)
-                for state1 in lower_states:
-                    for state2 in upper_states:
-                        zeeman_transitions.append(transitions.Transition(
-                            lower = state1,
-                            upper = state2,
-                            A = transition.A,
-                            linewidth = transition.linewidth,
-                            lifetime = transition.lifetime
-                            ))
-                        
-        return zeeman_transitions
-    '''
     def magnetic_sublevels(self, state):
         if self.I == 0:
             return states.zeeman_split(state, self.B)
@@ -111,7 +173,9 @@ class Atom:
         return zeeman_transitions
     
     def branching_ratios(self):
-        """Returns normalized branching ratios for every Zeeman transition."""
+        """
+        Returns normalized branching ratios for every Zeeman transition.
+        """
     
         ratios = {}
     
@@ -193,45 +257,54 @@ class Atom:
         return len(self.zeeman_transitions())
     
     def atom_graph(self):
+        """
+        Building the Grotrian diagram for rotating frame energy assignment.
+        The edges are transitions driven by the lasers.
+        """
         G = nx.Graph()
         G.add_nodes_from(self.add_zeeman_states())
-                    
+        for driven in self.driven_transitions():
+            G.add_edge(driven.transition.lower, driven.transition.upper,
+                       detuning=driven.laser.frequency - driven.transition.frequency)
         return G
     
-    def assign_rotating_frame_energies(self):
-        # I don't know how this works and will come back later
-        G = self.atom_graph()
+    def assign_rotating_frame_energies(self, G=None):
+        """
+        Assigning the rotating frame energies.
+        The rotating frame is determined by a tree diagram, where the nodes are separated by the laser frequencies.
+        The off-diagonal terms are the cumulative detunings to reach the state from ground state.
+        """
+        if G is None:
+            G = self.atom_graph()
         energies = {}
         for component in nx.connected_components(G):
             ref = min(component, key=lambda s: s.energy_omega)
             sub_energies = {ref: ref.energy_omega}
-            
+
             for u, v in nx.bfs_edges(G, ref):
                 detuning = G[u][v]['detuning']
                 sub_energies[v] = sub_energies[u] - 2 * np.pi * detuning
-                # sub_energies[v] = sub_energies[u] - hbar * detuning
             energies.update(sub_energies)
-    
+
         return energies
-    
+
     def build_hamiltonian(self):
-        # Now this part is shit because the diagonal terms and
-        # the off-diagonal terms are added separately from the 
-        # transitions and the atom graph
-        
         states, index = self.basis()
         n = len(states)
         H = np.zeros((n, n), dtype=complex)
-        
-        # Adding diagonal terms
-        energies = self.assign_rotating_frame_energies()
+
+        # Build graph once; shared by diagonal and edge check
+        G = self.atom_graph()
+
+        # Diagonal: driven states (have edges) get rotating-frame energies.
+        # Isolated nodes are undriven — their raw energy_omega is optical-scale; skip them.
+        energies = self.assign_rotating_frame_energies(G)
         for state, E in energies.items():
-            # Dropping the off-resonant optical detunings
-            if abs(E) <= 1e10:
+            if G.degree(state) > 0:
                 H[index[state], index[state]] = E
                 print(f'diagonal detuning = {E} added')
-        
-        # Adding off-diagonal terms
+
+        # Off-diagonal: Rabi couplings
         for driven in self.driven_transitions():
             i, j = index[driven.transition.lower], index[driven.transition.upper]
             H[i, j] += driven.rabi_frequency / 2

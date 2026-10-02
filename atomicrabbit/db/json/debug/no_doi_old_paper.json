@@ -1,0 +1,27 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Oscillator Strengths of the Principal Series of Rubidium",
+      "authors": "Kopfermann, H.; Wessel, G.",
+      "year": 1951,
+      "doi": null,
+      "journal": "Zeitschrift für Physik",
+      "notes": "Pre-DOI publication. source_paper_id must be resolved by title, not doi.",
+      "data_types": ["transition"]
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Rb", "mass_number": null,
+      "upper_config": "5p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "5s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 794.8,
+      "einstein_A_s1": null,
+      "source_type": "paper", "source_doi": null,
+      "source_title": "Oscillator Strengths of the Principal Series of Rubidium",
+      "is_recommended": 0
+    }
+  }
+]

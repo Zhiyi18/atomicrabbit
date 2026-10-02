@@ -1,0 +1,519 @@
+[
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 130,
+      "nuclear_spin": 0,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Spectroscopy of a Synthetic Trapped Ion Qubit",
+      "authors": "Hucul, D.; Christensen, J. E.; Hudson, E. R.; Campbell, W. C.",
+      "year": 2017,
+      "doi": "10.1103/PhysRevLett.119.100501",
+      "journal": "Physical Review Letters",
+      "notes": "Measured isotope shifts (relative to 138Ba+) for the 6s 2S1/2 - 6p 2P1/2 (493 nm) and 6p 2P1/2 - 5d 2D3/2 (650 nm) transitions for Ba+ isotopes A=130,132,133,134,135,136,137. Also measured hyperfine A constants for 133Ba+ (I=1/2), 135Ba+ (I=3/2), and 137Ba+ (I=3/2) in the 6s 2S1/2, 6p 2P1/2, and 5d 2D3/2 states, and B constants for 135Ba+ and 137Ba+ in 5d 2D3/2. All data in Table 1, p. 2-3. Systematic uncertainty of ±20 MHz on isotope shifts due to wavemeter drift.",
+      "data_types": ["isotope_shift", "hyperfine_constant"]
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 132,
+      "nuclear_spin": 0,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 134,
+      "nuclear_spin": 0,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "nuclear_spin": 1.5,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 136,
+      "nuclear_spin": 0,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "nuclear_spin": 1.5,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 138,
+      "nuclear_spin": 0,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "configuration": "6s",
+      "term_symbol": "2S",
+      "L": 0,
+      "S": 0.5,
+      "J": 0.5,
+      "parity": "even",
+      "energy_cm1": 0.0,
+      "hyperfine_A_MHz": 3591.67011718,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "hyperfine_A_uncertainty_MHz": 2.4e-7,
+        "notes": "Value given as 3591.67011718(24) MHz in units of last digit. I=3/2."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "configuration": "6p",
+      "term_symbol": "2P",
+      "L": 1,
+      "S": 0.5,
+      "J": 0.5,
+      "parity": "odd",
+      "energy_cm1": 20261.56,
+      "hyperfine_A_MHz": 664.6,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "hyperfine_A_uncertainty_MHz": 0.3,
+        "notes": "I=3/2. J=1/2 so B=0 by symmetry."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "configuration": "5d",
+      "term_symbol": "2D",
+      "L": 2,
+      "S": 0.5,
+      "J": 1.5,
+      "parity": "even",
+      "energy_cm1": 4873.852,
+      "hyperfine_A_MHz": 169.5892,
+      "hyperfine_B_MHz": 28.9536,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "hyperfine_A_uncertainty_MHz": 0.0009,
+        "hyperfine_B_uncertainty_MHz": 0.0025,
+        "notes": "I=3/2. B constant provided. A=169.5892(9), B=28.9536(25) MHz."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "configuration": "6s",
+      "term_symbol": "2S",
+      "L": 0,
+      "S": 0.5,
+      "J": 0.5,
+      "parity": "even",
+      "energy_cm1": 0.0,
+      "hyperfine_A_MHz": 4018.87083385,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "hyperfine_A_uncertainty_MHz": 1.8e-7,
+        "notes": "Value given as 4018.87083385(18) MHz in units of last digit. I=3/2. Consistent with Blatt & Werth 1982 (doi:10.1103/PhysRevA.25.1476)."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "configuration": "6p",
+      "term_symbol": "2P",
+      "L": 1,
+      "S": 0.5,
+      "J": 0.5,
+      "parity": "odd",
+      "energy_cm1": 20261.56,
+      "hyperfine_A_MHz": 743.7,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "hyperfine_A_uncertainty_MHz": 0.3,
+        "notes": "I=3/2. J=1/2 so B=0 by symmetry. Note: systematic uncertainty ±20 MHz on transition frequency measurements does not apply to A constants."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "configuration": "5d",
+      "term_symbol": "2D",
+      "L": 2,
+      "S": 0.5,
+      "J": 1.5,
+      "parity": "even",
+      "energy_cm1": 4873.852,
+      "hyperfine_A_MHz": 189.7288,
+      "hyperfine_B_MHz": 44.5417,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "hyperfine_A_uncertainty_MHz": 0.0006,
+        "hyperfine_B_uncertainty_MHz": 0.0016,
+        "notes": "I=3/2. A=189.7288(6), B=44.5417(16) MHz."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 130,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "6s",
+      "lower_term": "2S",
+      "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 355.3,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 4.4,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6s 2S1/2 - 6p 2P1/2 transition (493 nm). Systematic uncertainty ±20 MHz from wavemeter drift."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 132,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "6s",
+      "lower_term": "2S",
+      "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 278.9,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 4.0,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6s 2S1/2 - 6p 2P1/2 transition (493 nm)."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 134,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "6s",
+      "lower_term": "2S",
+      "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 222.6,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 3.0,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6s 2S1/2 - 6p 2P1/2 transition (493 nm)."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "6s",
+      "lower_term": "2S",
+      "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 348.6,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 2.1,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6s 2S1/2 - 6p 2P1/2 transition (493 nm). Centroid shift for odd isotope."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 136,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "6s",
+      "lower_term": "2S",
+      "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 179.4,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 1.8,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6s 2S1/2 - 6p 2P1/2 transition (493 nm)."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "6s",
+      "lower_term": "2S",
+      "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 271.1,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 1.7,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6s 2S1/2 - 6p 2P1/2 transition (493 nm). Centroid shift for odd isotope."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 130,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "5d",
+      "lower_term": "2D",
+      "lower_J": 1.5,
+      "wavelength_nm": 649.7,
+      "isotope_shift_MHz": 394.0,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 1.0,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6p 2P1/2 - 5d 2D3/2 transition (~650 nm repump). Stat uncertainty only listed."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 132,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "5d",
+      "lower_term": "2D",
+      "lower_J": 1.5,
+      "wavelength_nm": 649.7,
+      "isotope_shift_MHz": 292.0,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 1.0,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6p 2P1/2 - 5d 2D3/2 transition (~650 nm)."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 134,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "5d",
+      "lower_term": "2D",
+      "lower_J": 1.5,
+      "wavelength_nm": 649.7,
+      "isotope_shift_MHz": 174.5,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 0.8,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6p 2P1/2 - 5d 2D3/2 transition (~650 nm)."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "5d",
+      "lower_term": "2D",
+      "lower_J": 1.5,
+      "wavelength_nm": 649.7,
+      "isotope_shift_MHz": 82.7,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 0.6,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6p 2P1/2 - 5d 2D3/2 transition (~650 nm). Centroid shift for odd isotope."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 136,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "5d",
+      "lower_term": "2D",
+      "lower_J": 1.5,
+      "wavelength_nm": 649.7,
+      "isotope_shift_MHz": 68.0,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 0.5,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6p 2P1/2 - 5d 2D3/2 transition (~650 nm)."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "upper_config": "6p",
+      "upper_term": "2P",
+      "upper_J": 0.5,
+      "lower_config": "5d",
+      "lower_term": "2D",
+      "lower_J": 1.5,
+      "wavelength_nm": 649.7,
+      "isotope_shift_MHz": -13.0,
+      "isotope_shift_ref_mass": 138,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.119.100501",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 2-3",
+        "isotope_shift_uncertainty_MHz": 0.4,
+        "systematic_uncertainty_MHz": 20,
+        "notes": "6p 2P1/2 - 5d 2D3/2 transition (~650 nm). Centroid shift for odd isotope."
+      }
+    }
+  }
+]

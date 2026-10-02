@@ -1,0 +1,25 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Precise Measurement of Hyperfine Structure in the 5P State of Rb-87",
+      "authors": "Bize, S. et al.",
+      "year": 1999,
+      "doi": "10.0000/test.bize.rb87.1999",
+      "journal": "Europhysics Letters",
+      "notes": "Only contributes updated hyperfine A and B for 5P3/2. No new transitions. Tests inserting a new energy_levels row for a level that already exists from steck_rb87_2001.",
+      "data_types": ["hyperfine_constant"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Rb", "mass_number": 87,
+      "configuration": "5p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 1.5,
+      "parity": "odd", "energy_cm1": 12816.545,
+      "hyperfine_A_MHz": 84.7185, "hyperfine_B_MHz": 12.4965,
+      "source_type": "paper", "source_doi": "10.0000/test.bize.rb87.1999",
+      "is_recommended": 1
+    }
+  }
+]

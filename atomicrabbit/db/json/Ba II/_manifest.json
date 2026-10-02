@@ -1,0 +1,6 @@
+{
+  "linename": "Ba II",
+  "element": "Ba",
+  "nist_mass_numbers": [130, 132, 134, 135, 136, 137, 138],
+  "nist_wavelength_ranges_nm": [[100, 500], [500, 1000], [1000, 2000]]
+}

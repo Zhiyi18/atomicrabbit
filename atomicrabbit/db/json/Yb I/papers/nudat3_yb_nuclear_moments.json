@@ -1,0 +1,29 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "NuDat 3: Nuclear Structure and Decay Data (Yb isotopes)",
+      "authors": "National Nuclear Data Center, Brookhaven National Laboratory",
+      "year": 2024,
+      "doi": null,
+      "journal": "Online Database",
+      "notes": "https://www.nndc.bnl.gov/nudat3/. Accessed 2026-08-23. Source for 173Yb ground state nuclear magnetic moment. NuDat compiles adopted values from primary nuclear physics measurements.",
+      "data_types": ["hyperfine_constant"]
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 173,
+      "nuclear_spin": 2.5,
+      "mu_I": -0.67989,
+      "properties": {
+        "mu_I_uncertainty": 0.00003,
+        "mu_I_units": "nuclear magnetons",
+        "quadrupole_moment_fm2": 280.0,
+        "quadrupole_moment_uncertainty_fm2": 4.0,
+        "source_page": "NuDat3 entry for 173Yb ground state (0.0 keV, J^pi=5/2-)"
+      }
+    }
+  }
+]

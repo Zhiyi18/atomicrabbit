@@ -1,0 +1,93 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Isotope selective three-step photoionization of 174Yb",
+      "authors": "Suryanarayana, M. V.; Sankari, M.",
+      "year": 2023,
+      "doi": "10.1364/JOSAB.476224",
+      "journal": "Journal of the Optical Society of America B",
+      "notes": "JOSA B vol. 40, no. 1, pp. 53-62 (2023). Theory paper: density matrix formalism for AVLIS of 174Yb. Three-step scheme: 6s2 1S0 (0 cm^-1) -[555.8023 nm]-> 6s6p 3P1 (17992.007 cm^-1) -[581.2273 nm]-> (4f13 6s2 6p)(7/2,3/2) J=2 (35196.98 cm^-1) -[582.88 nm]-> autoionization at 52353 cm^-1 -> Yb+. Ionization energy 50443.2 cm^-1 (6.254 eV). Radiative lifetimes of 3P1 and inner-shell levels: 840 ns and 1120 ns (from Borisov 1996). Table 2 frequency positions (isotope shifts + HFS components for all Yb isotopes, both steps) are taken entirely from ref [16] = Borisov, Kuzmina, Mishin, J. Russ. Laser Res. 17, 332-345 (1996); that paper is the primary measurement source for the 581 nm isotope shifts and should be added to the DB separately.",
+      "data_types": ["transition"]
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "nuclear_spin": 0.0, "mu_I": null
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "configuration": "6s6p", "term_symbol": "3P", "L": 1, "S": 1.0, "J": 1.0,
+      "parity": "odd",
+      "energy_cm1": 17992.007,
+      "source_type": "paper", "source_doi": "10.1364/JOSAB.476224",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Section 2 (photoionization scheme)",
+        "note": "FK reference level for 581.2273 nm transition; energy from scheme description p. 2. Primary source is NIST or Atkinson 2019."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "configuration": "4f13 6s2 6p", "term_symbol": "(7/2,3/2)", "L": null, "S": null, "J": 2.0,
+      "parity": "even",
+      "energy_cm1": 35196.98,
+      "source_type": "paper", "source_doi": "10.1364/JOSAB.476224",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Section 2 (photoionization scheme), p. 2",
+        "jj_coupling": "(j_4f13=7/2, j_6p=3/2) J=2",
+        "paper_notation": "4f14 6s2 (7/2,3/2) J=2",
+        "paper_notation_note": "paper superscript '14' is a typesetting error; correct configuration is 4f13 6s2 6p based on parity (even) and energy level context",
+        "lifetime_s_from_borisov1996": 1120e-9
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "upper_config": "4f13 6s2 6p", "upper_term": "(7/2,3/2)", "upper_J": 2.0,
+      "lower_config": "6s6p", "lower_term": "3P", "lower_J": 1.0,
+      "wavelength_nm": 581.2273,
+      "frequency_THz": 515.89,
+      "source_type": "paper", "source_doi": "10.1364/JOSAB.476224",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Section 2 (photoionization scheme), p. 2",
+        "note": "Second step of 3-step photoionization scheme for 174Yb AVLIS (inner-shell 4f13 transition). Isotope shifts for this transition relative to 174Yb for 168,170,172,173,176Yb, and hyperfine components for 171Yb and 173Yb, are in Table 2 of this paper but originate from Borisov et al. 1996 (J. Russ. Laser Res. 17, 332-345); add a separate JSON for that paper to capture those data with correct provenance.",
+        "isotope_shift_ref_mass": 174,
+        "table2_isotope_shifts_MHz_from_borisov1996": {
+          "176Yb": 2578,
+          "172Yb": -2711,
+          "170Yb": -6318,
+          "168Yb": -10293
+        },
+        "table2_171Yb_components_MHz": {
+          "F2_1o2_to_F3_3o2": -2891,
+          "F2_3o2_to_F3_3o2": -8828,
+          "F2_3o2_to_F3_5o2": -5996
+        },
+        "table2_173Yb_components_MHz": {
+          "F2_7o2_to_F3_5o2": 2888,
+          "F2_7o2_to_F3_7o2": 2186,
+          "F2_7o2_to_F3_9o2": -723,
+          "F2_5o2_to_F3_3o2": -2143,
+          "F2_5o2_to_F3_5o2": -1808,
+          "F2_5o2_to_F3_7o2": -2510,
+          "F2_3o2_to_F3_1o2": -4176,
+          "F2_3o2_to_F3_3o2": -3640,
+          "F2_3o2_to_F3_5o2": -3306
+        }
+      }
+    }
+  }
+]

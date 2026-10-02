@@ -1,0 +1,55 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Intercombination line frequencies in 171Yb validated with the clock transition",
+      "authors": "Jones, D. M.; van Kann, F.; McFerran, J. J.",
+      "year": 2023,
+      "doi": "10.1364/AO.488653",
+      "journal": "Applied Optics",
+      "notes": "arXiv:2303.08421. Measures absolute frequencies of the two 171Yb 1S0-3P1 hyperfine components (F=1/2 and F=3/2), cross-validated against the clock transition. Supersedes earlier A(3P1) measurements for 171Yb.",
+      "data_types": ["hyperfine_constant", "transition"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "configuration": "6s6p", "term_symbol": "3P", "L": 1, "S": 1.0, "J": 1.0,
+      "parity": "odd",
+      "energy_cm1": 17992.07,
+      "hyperfine_A_MHz": 3957.833,
+      "source_type": "paper", "source_doi": "10.1364/AO.488653",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Abstract and Section 3.B",
+        "hyperfine_A_uncertainty_kHz": 28,
+        "hyperfine_separation_kHz": 5936749,
+        "hyperfine_separation_uncertainty_kHz": 41,
+        "energy_cm1_note": "derived from weighted COG of F=3/2 and F=1/2 component frequencies"
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "upper_config": "6s6p", "upper_term": "3P", "upper_J": 1.0,
+      "lower_config": "6s2", "lower_term": "1S", "lower_J": 0.0,
+      "wavelength_nm": 555.8,
+      "frequency_THz": 539.388427,
+      "source_type": "paper", "source_doi": "10.1364/AO.488653",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Section 3.B",
+        "note": "center-of-gravity frequency; individual hyperfine component frequencies also reported",
+        "freq_F_half_kHz": 539384469009,
+        "freq_F_half_uncertainty_kHz": 35,
+        "freq_F_threehalf_kHz": 539390405761,
+        "freq_F_threehalf_uncertainty_kHz": 69,
+        "clock_offset_from_BIPM_kHz": 5.9,
+        "clock_offset_uncertainty_kHz": 0.9
+      }
+    }
+  }
+]

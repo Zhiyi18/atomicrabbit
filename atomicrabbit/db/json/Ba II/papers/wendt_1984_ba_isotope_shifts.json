@@ -1,0 +1,278 @@
+[
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 130, "nuclear_spin": 0.0, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 132, "nuclear_spin": 0.0, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 134, "nuclear_spin": 0.0, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 135, "nuclear_spin": 1.5, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 136, "nuclear_spin": 0.0, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 137, "nuclear_spin": 1.5, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 138, "nuclear_spin": 0.0, "mu_I": null}
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Relativistic J-Dependence of the Isotope Shift in the 6s-6p Doublet of Ba II",
+      "authors": "Wendt, K.; Ahmad, S. A.; Buchinger, F.; Mueller, A. C.; Neugart, R.; Otten, E.-W.",
+      "year": 1984,
+      "doi": "10.1007/BF01413460",
+      "journal": "Zeitschrift fur Physik A - Atoms and Nuclei",
+      "notes": "Collinear laser-ion beam spectroscopy on all 7 stable Ba+ isotopes. Table 1 (p. 127): isotope shifts relative to 138Ba for the 493.4 nm (6s 2S1/2 - 6p 2P1/2) and 455.4 nm (6s 2S1/2 - 6p 2P3/2) transitions. Table 2 (p. 127): A and B hyperfine constants for 135Ba and 137Ba in 6s, 6p 2P1/2, and 6p 2P3/2 levels. Sign convention: delta_nu^{138,A} = nu_A - nu_138 (positive for lighter isotopes). The 455 nm isotope shifts are the primary high-resolution measurement of that line. The 493 nm data are superseded by Hucul et al. 2017 (same values, more isotopes). The A and B constants are less precise than Villemoes et al. 1993.",
+      "data_types": ["isotope_shift", "hyperfine_constant"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "configuration": "6p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 0.5,
+      "parity": "odd", "energy_cm1": 20261.56,
+      "hyperfine_A_MHz": 665.0,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 2, p. 127",
+        "hyperfine_A_uncertainty_MHz": 1.6,
+        "notes": "J=1/2 so B=0 by symmetry. Less precise than Villemoes et al. 1993."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "configuration": "6p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 1.5,
+      "parity": "odd", "energy_cm1": 21952.40,
+      "hyperfine_A_MHz": 113.2,
+      "hyperfine_B_MHz": 59.4,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 2, p. 127",
+        "hyperfine_A_uncertainty_MHz": 0.8,
+        "hyperfine_B_uncertainty_MHz": 2.3,
+        "notes": "Less precise than Villemoes et al. 1993 A=113.0(0.1), B=59.0(0.1) MHz."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "configuration": "6p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 0.5,
+      "parity": "odd", "energy_cm1": 20261.56,
+      "hyperfine_A_MHz": 744.1,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 2, p. 127",
+        "hyperfine_A_uncertainty_MHz": 1.6,
+        "notes": "J=1/2 so B=0 by symmetry. Less precise than Villemoes et al. 1993."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "configuration": "6p", "term_symbol": "2P", "L": 1, "S": 0.5, "J": 1.5,
+      "parity": "odd", "energy_cm1": 21952.40,
+      "hyperfine_A_MHz": 126.7,
+      "hyperfine_B_MHz": 95.0,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 2, p. 127",
+        "hyperfine_A_uncertainty_MHz": 1.1,
+        "hyperfine_B_uncertainty_MHz": 3.7,
+        "notes": "Less precise than Villemoes et al. 1993 A=127.2(0.2), B=92.5(0.2) MHz."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 130,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 455.4,
+      "isotope_shift_MHz": 372.3, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 1,
+      "properties": {"source_page": "Table 1, p. 127", "isotope_shift_uncertainty_MHz": 4.9}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 132,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 455.4,
+      "isotope_shift_MHz": 294.9, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 1,
+      "properties": {"source_page": "Table 1, p. 127", "isotope_shift_uncertainty_MHz": 4.2}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 134,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 455.4,
+      "isotope_shift_MHz": 233.9, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 1,
+      "properties": {"source_page": "Table 1, p. 127", "isotope_shift_uncertainty_MHz": 3.7}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 455.4,
+      "isotope_shift_MHz": 360.7, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 127",
+        "isotope_shift_uncertainty_MHz": 2.2,
+        "notes": "Centroid shift for odd isotope."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 136,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 455.4,
+      "isotope_shift_MHz": 186.9, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 1,
+      "properties": {"source_page": "Table 1, p. 127", "isotope_shift_uncertainty_MHz": 2.1}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 1.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 455.4,
+      "isotope_shift_MHz": 279.0, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table 1, p. 127",
+        "isotope_shift_uncertainty_MHz": 2.6,
+        "notes": "Centroid shift for odd isotope."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 130,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 355.3, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 1, p. 127",
+        "isotope_shift_uncertainty_MHz": 4.4,
+        "notes": "Superseded by Hucul et al. 2017 (same value, more isotopes)."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 132,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 278.9, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 0,
+      "properties": {"source_page": "Table 1, p. 127", "isotope_shift_uncertainty_MHz": 4.0}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 134,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 222.6, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 0,
+      "properties": {"source_page": "Table 1, p. 127", "isotope_shift_uncertainty_MHz": 3.0}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 348.6, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 0,
+      "properties": {"source_page": "Table 1, p. 127", "isotope_shift_uncertainty_MHz": 2.1}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 136,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 179.4, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 0,
+      "properties": {"source_page": "Table 1, p. 127", "isotope_shift_uncertainty_MHz": 1.8}
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "upper_config": "6p", "upper_term": "2P", "upper_J": 0.5,
+      "lower_config": "6s", "lower_term": "2S", "lower_J": 0.5,
+      "wavelength_nm": 493.4,
+      "isotope_shift_MHz": 271.1, "isotope_shift_ref_mass": 138,
+      "source_type": "paper", "source_doi": "10.1007/BF01413460",
+      "is_recommended": 0,
+      "properties": {"source_page": "Table 1, p. 127", "isotope_shift_uncertainty_MHz": 1.7}
+    }
+  }
+]

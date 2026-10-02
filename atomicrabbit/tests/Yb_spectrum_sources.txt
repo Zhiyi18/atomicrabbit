@@ -1,0 +1,112 @@
+Yb 399 nm Spectrum Calculation — Data Sources
+======================================================
+
+NIST ASD provides A coefficients and energy level structure
+(configuration, J, parity) for all isotopes.
+
+Isotope-specific parameters:
+
+  Yb-168  (I=0.0):
+    A coefficients, level structure ...... [1] NIST ASD
+    isotope shifts, lifetimes, transition frequencies [10] Borisov et al. 1996
+    hyperfine constants (A, B), isotope shifts [2] Kleinert et al. 2016
+    hyperfine constants (A, B), isotope shifts, transition frequencies [4] Kawasaki et al. 2024
+
+  Yb-170  (I=0.0):
+    A coefficients, level structure ...... [1] NIST ASD
+    isotope shifts, lifetimes, transition frequencies [10] Borisov et al. 1996
+    hyperfine constants (A, B), isotope shifts [2] Kleinert et al. 2016
+    hyperfine constants (A, B), isotope shifts [3] Atkinson et al. 2019
+    hyperfine constants (A, B), isotope shifts, transition frequencies [4] Kawasaki et al. 2024
+
+  Yb-171  (I=0.5):
+    A coefficients, level structure ...... [1] NIST ASD
+    isotope shifts, lifetimes, transition frequencies [10] Borisov et al. 1996
+    hyperfine constants (A, B), isotope shifts [2] Kleinert et al. 2016
+    hyperfine constants (A, B), isotope shifts [3] Atkinson et al. 2019
+    transition frequencies                 [6] Kim et al. 2021
+    hyperfine constants (A, B), transition frequencies [5] Jones et al. 2023
+    hyperfine constants (A, B), transition frequencies [8] Qiao et al. 2023
+    hyperfine constants (A, B), isotope shifts, transition frequencies [4] Kawasaki et al. 2024
+
+  Yb-172  (I=0.0):
+    A coefficients, level structure ...... [1] NIST ASD
+    isotope shifts, lifetimes, transition frequencies [10] Borisov et al. 1996
+    hyperfine constants (A, B), isotope shifts [2] Kleinert et al. 2016
+    hyperfine constants (A, B), isotope shifts [3] Atkinson et al. 2019
+    hyperfine constants (A, B), isotope shifts, transition frequencies [4] Kawasaki et al. 2024
+
+  Yb-173  (I=2.5):
+    A coefficients, level structure ...... [1] NIST ASD
+    isotope shifts, lifetimes, transition frequencies [10] Borisov et al. 1996
+    hyperfine constants (A, B), isotope shifts [2] Kleinert et al. 2016
+    hyperfine constants (A, B), isotope shifts [3] Atkinson et al. 2019
+    hyperfine constants (A, B), isotope shifts, transition frequencies [4] Kawasaki et al. 2024
+
+  Yb-174  (I=0.0):
+    A coefficients, level structure ...... [1] NIST ASD
+    hyperfine constants (A, B), isotope shifts [2] Kleinert et al. 2016
+    hyperfine constants (A, B), isotope shifts [3] Atkinson et al. 2019
+    hyperfine constants (A, B), isotope shifts, transition frequencies [7] Qiao et al. 2023
+    transition frequencies                 [9] Suryanarayana et al. 2023
+    hyperfine constants (A, B), isotope shifts, transition frequencies [4] Kawasaki et al. 2024
+
+  Yb-176  (I=0.0):
+    A coefficients, level structure ...... [1] NIST ASD
+    isotope shifts, lifetimes, transition frequencies [10] Borisov et al. 1996
+    hyperfine constants (A, B), isotope shifts [2] Kleinert et al. 2016
+    hyperfine constants (A, B), isotope shifts [3] Atkinson et al. 2019
+    hyperfine constants (A, B), isotope shifts, transition frequencies [4] Kawasaki et al. 2024
+
+
+References
+------------------------------------------------------
+[1] Kramida, A., Ralchenko, Yu., Reader, J., and NIST ASD Team (2024).
+   NIST Atomic Spectra Database (ver. 5.11).
+   National Institute of Standards and Technology, Gaithersburg, MD.
+   https://doi.org/10.18434/T4W30F
+
+[2] Kleinert, M.; Dahl, M. E. G.; Bergeson, S. (2016).
+   Isotope shifts and hyperfine structure in the 399-nm 1S0-1P1 transition in ytterbium.
+   Physical Review A.
+   DOI: 10.1103/PhysRevA.94.052511
+
+[3] Atkinson, P. E.; Schelfhout, J. S.; McFerran, J. J. (2019).
+   Hyperfine constants and line separations for the 1S0-3P1 intercombination line in neutral ytterbium with sub-Doppler resolution.
+   Physical Review A.
+   DOI: 10.1103/PhysRevA.100.042505
+
+[4] Kawasaki, A.; Kobayashi, T.; Nishiyama, A.; Tanabe, T.; Yasuda, M. (2024).
+   Isotope-shift analysis with the 4f14 6s2 1S0 - 4f13 5d 6s2 (J=2) transition in ytterbium.
+   Physical Review A.
+   DOI: 10.1103/PhysRevA.109.062806
+
+[5] Jones, D. M.; van Kann, F.; McFerran, J. J. (2023).
+   Intercombination line frequencies in 171Yb validated with the clock transition.
+   Applied Optics.
+   DOI: 10.1364/AO.488653
+
+[6] Kim, H.; Heo, M.-S.; Park, C. Y.; Yu, D.-H.; Lee, W.-K. (2021).
+   Absolute frequency measurement of the 171Yb optical lattice clock at KRISS using TAI for over a year.
+   Metrologia.
+   DOI: 10.1088/1681-7575/ac1950
+
+[7] Qiao, H.; Liu, L.; Zhou, M.; Luo, L.; Xu, X. (2023).
+   Investigation of the 6s6p 3P2-6s7s 3S1 transition of ytterbium atoms with modulation-transfer spectroscopy.
+   Applied Physics Letters.
+   DOI: 10.1063/5.0155776
+
+[8] Qiao, H.; Sun, C.-Y.; Peng, C.-Q.; Qi, Q.-C.; Zhao, C.-C.; Zhou, M.; Xu, X.-Y. (2023).
+   Frequency measurement of 6s6p 3P0,2-6s7s 3S1 transitions in ultracold 171Yb atoms referenced to local optical clock.
+   Results in Physics.
+   DOI: 10.1016/j.rinp.2023.106439
+
+[9] Suryanarayana, M. V.; Sankari, M. (2023).
+   Isotope selective three-step photoionization of 174Yb.
+   Journal of the Optical Society of America B.
+   DOI: 10.1364/JOSAB.476224
+
+[10] Borisov, S. K.; Kuz'mina, M. A.; Mishin, V. A. (1996).
+   A study of isotopically selective photoionization of ytterbium atoms for laser isotope separation.
+   Journal of Russian Laser Research.
+   DOI: 10.1007/BF02073528

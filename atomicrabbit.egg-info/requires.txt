@@ -1,4 +1,6 @@
 qutip
+sympy
+networkx
 
 [astro]
 astroquery

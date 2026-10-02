@@ -1,0 +1,176 @@
+[
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "nuclear_spin": 1.5,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "nuclear_spin": 1.5,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Reliability test for the experimental results of electric quadrupole hyperfine structure constants and new assessment of nuclear quadrupole moments in 135,137Ba",
+      "authors": "Sahoo, B. K.; Barrett, M. D.; Das, B. P.",
+      "year": 2013,
+      "doi": "10.1103/PhysRevA.87.042506",
+      "journal": "Physical Review A",
+      "notes": "Theory paper compiling and testing experimental B constants (electric quadrupole hyperfine coupling constants) for 135Ba+ and 137Ba+ in 6p 2P3/2, 5d 2D3/2, and 5d 2D5/2 states. Table 3 compares multiple experimental measurements. Does NOT contain new experimental A or B measurements. Used to derive improved nuclear quadrupole moments Q(135Ba)=0.153(2) b and Q(137Ba)=0.236(3) b. Published journal DOI from arXiv metadata: 10.1103/PhysRevA.87.042506. arXiv: 1303.6836.",
+      "data_types": ["hyperfine_constant"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "configuration": "6p",
+      "term_symbol": "2P",
+      "L": 1,
+      "S": 0.5,
+      "J": 1.5,
+      "parity": "odd",
+      "energy_cm1": 21952.43,
+      "hyperfine_A_MHz": null,
+      "hyperfine_B_MHz": 92.5,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevA.87.042506",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 3 (citing Villemoes et al. 1993, ref [40])",
+        "hyperfine_B_uncertainty_MHz": 0.4,
+        "notes": "B constant from Villemoes 1993 (J. Phys. B 26, 4289), reported in Table 3 of Sahoo 2013. Multiple experimental values listed: 92.5(2)[Villemoes93], 95.0(37)[Wendt84], 89.7(15)[Silverans80], 91.6(12)[Winter77], 92.5(4)[Andra76]. Most precise is 92.5(2) from Villemoes 1993. is_recommended=0 because full paper inaccessible; use Villemoes 1993 (doi:10.1088/0953-4075/26/22/030) as primary source."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "configuration": "6p",
+      "term_symbol": "2P",
+      "L": 1,
+      "S": 0.5,
+      "J": 1.5,
+      "parity": "odd",
+      "energy_cm1": 21952.43,
+      "hyperfine_A_MHz": null,
+      "hyperfine_B_MHz": 59.0,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevA.87.042506",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 3 (citing Villemoes et al. 1993, ref [40])",
+        "hyperfine_B_uncertainty_MHz": 0.1,
+        "notes": "B constant from Villemoes 1993 (J. Phys. B 26, 4289), reported in Table 3 of Sahoo 2013. Multiple experimental values: 59.0(1)[Villemoes93], 59.4(23)[Wendt84], 55.3(34)[Silverans80], 62.1(12)[Winter77], 60.4(4)[Andra76]. Most precise is 59.0(1) from Villemoes 1993."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "configuration": "5d",
+      "term_symbol": "2D",
+      "L": 2,
+      "S": 0.5,
+      "J": 2.5,
+      "parity": "even",
+      "energy_cm1": 5674.8,
+      "hyperfine_A_MHz": null,
+      "hyperfine_B_MHz": 59.533,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevA.87.042506",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 3 (citing Silverans 1986, ref [28])",
+        "hyperfine_B_uncertainty_MHz": 0.043,
+        "notes": "B constant from Silverans 1986 (PRA 33, 2117), as cited in Table 3. Use Lewty 2013 (doi:10.1103/PhysRevA.88.012518) for more precise value: B=59.52552(11) MHz."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "configuration": "5d",
+      "term_symbol": "2D",
+      "L": 2,
+      "S": 0.5,
+      "J": 2.5,
+      "parity": "even",
+      "energy_cm1": 5674.8,
+      "hyperfine_A_MHz": null,
+      "hyperfine_B_MHz": 38.692,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevA.87.042506",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 3 (citing Silverans 1986, ref [28])",
+        "hyperfine_B_uncertainty_MHz": 0.010,
+        "notes": "B constant from Silverans 1986 (PRA 33, 2117). This is the best available value for 135Ba+ 5d 2D5/2 B constant."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 137,
+      "configuration": "5d",
+      "term_symbol": "2D",
+      "L": 2,
+      "S": 0.5,
+      "J": 1.5,
+      "parity": "even",
+      "energy_cm1": 4873.852,
+      "hyperfine_A_MHz": null,
+      "hyperfine_B_MHz": 44.5408,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevA.87.042506",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 3 (citing Silverans 1986, ref [28])",
+        "hyperfine_B_uncertainty_MHz": 0.0017,
+        "notes": "B from Silverans 1986 as cited. More precise value from Lewty 2013: B=44.537594(34) MHz."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 135,
+      "configuration": "5d",
+      "term_symbol": "2D",
+      "L": 2,
+      "S": 0.5,
+      "J": 1.5,
+      "parity": "even",
+      "energy_cm1": 4873.852,
+      "hyperfine_A_MHz": null,
+      "hyperfine_B_MHz": 28.9528,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevA.87.042506",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table 3 (citing Silverans 1986, ref [28])",
+        "hyperfine_B_uncertainty_MHz": 0.0025,
+        "notes": "B from Silverans 1986 as cited. Hucul 2017 gives B=28.9536(25) MHz which is marginally different."
+      }
+    }
+  }
+]

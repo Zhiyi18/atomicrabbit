@@ -1,0 +1,34 @@
+Papers inaccessible after 3+ website attempts. Stub JSON files written with null numerical fields.
+
+1. Wendt, K.; Ahmad, S. A.; Buchinger, F.; Mueller, A. C.; Neugart, R.; Otten, E. W.
+   "Relativistic J-dependence of the isotope shift in the 6s-6p doublet of Ba II"
+   Z. Phys. A 318, 125-129 (1984)
+   DOI: 10.1007/BF01413460
+   Attempted: Springer paywall, OSTI biblio (denied), ADS (denied)
+   Content: Isotope shifts for ALL 7 stable Ba+ isotopes on both 493nm and 455nm lines; hyperfine constants
+   Stub file: wendt_1984_ba_isotope_shifts_stub.json
+
+2. Silverans, R. E.; Borghs, G.; De Bisschop, P.; Van Hove, M.
+   "Hyperfine structure of the 5d 2DJ states in the alkaline-earth Ba ion by fast-ion-beam laser-rf spectroscopy"
+   Phys. Rev. A 33, 2117-2120 (1986)
+   DOI: 10.1103/PhysRevA.33.2117
+   Attempted: APS paywall (403), ADS (denied), no arXiv preprint
+   Content: A and B constants for 135Ba+ and 137Ba+ in 5d 2D5/2 state; companion paper covered 2D3/2
+   Stub file: silverans_1986_ba_5d_hyperfine_stub.json
+
+3. Villemoes, P.; Arnesen, A.; Heijkenskjold, F.; Wannstrom, A.
+   "Isotope shifts and hyperfine structure of 134-138Ba II by fast ion beam-laser spectroscopy"
+   J. Phys. B: At. Mol. Opt. Phys. 26, 4289-4299 (1993)
+   DOI: 10.1088/0953-4075/26/22/030
+   Attempted: IOPscience paywall, Semantic Scholar (no data), ADS (denied)
+   Content: Isotope shifts of 5d-6p transitions; improved A and B constants for 6p 2P1/2 and 6p 2P3/2 of 135Ba+ and 137Ba+
+   Stub file: villemoes_1993_ba_6p_hyperfine_isoshifts_stub.json
+
+4. Trapp, S.; Marx, G.; Tommaseo, G.; Klaas, A.; Drakoudis, A.; Revalde, G.; Szawiola, G.; Werth, G.
+   "Hyperfine structure and g factor measurements on Ba+ and Eu+ isotopes"
+   Hyperfine Interactions 127, 57-64 (2000)
+   DOI: 10.1023/A:1012646207262
+   Attempted: Springer paywall (403), DeepDyve (subscription), no arXiv preprint
+   Content: 135Ba+ and 137Ba+ ground state HFS with precision; g-factor measurements
+   Note: 135Ba+ Whfs = 7183340234.90(0.57) Hz confirmed from secondary sources
+   Stub file: trapp_2000_ba_hyperfine_gfactor_stub.json

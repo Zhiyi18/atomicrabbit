@@ -6,7 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "atomicrabbit"
 version = "0.1.0"
 dependencies = [
-    "qutip"
+    "qutip",
+    "sympy",
+    "networkx"
 ]
 
 [project.optional-dependencies]

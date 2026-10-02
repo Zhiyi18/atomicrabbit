@@ -1,0 +1,71 @@
+[
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": 138,
+      "nuclear_spin": 0,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Precision measurements on the 138Ba+ 6s 2S1/2-5d 2D5/2 clock transition",
+      "authors": "Arnold, K. J.; Kaewuam, R.; Chanu, S. R.; Tan, T. R.; Zhang, Z.; Barrett, M. D.",
+      "year": 2020,
+      "doi": "10.1103/PhysRevLett.124.193001",
+      "journal": "Physical Review Letters",
+      "notes": "Absolute frequency measurement of the 138Ba+ electric quadrupole 6s 2S1/2 - 5d 2D5/2 clock transition at ~1762 nm (170 THz). Phase-locked 1762 nm ECDL to optical frequency comb referenced to H-maser. Also determines Lande g_J factor for 5d 2D5/2 with 30-fold improvement. Frequency value from abstract of arXiv:1906.09150.",
+      "data_types": ["absolute_frequency"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba",
+      "mass_number": 138,
+      "configuration": "5d",
+      "term_symbol": "2D",
+      "L": 2,
+      "S": 0.5,
+      "J": 2.5,
+      "parity": "even",
+      "energy_cm1": 5674.8,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.124.193001",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Abstract and main results",
+        "lande_gJ_5D5_2": 1.20036739,
+        "lande_gJ_uncertainty": 2.4e-7,
+        "notes": "138Ba+ has I=0 so no hyperfine structure. g_J(5D5/2) = 1.200367 39(24). Landé g factor for clock level."
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba",
+      "mass_number": 138,
+      "upper_config": "5d",
+      "upper_term": "2D",
+      "upper_J": 2.5,
+      "lower_config": "6s",
+      "lower_term": "2S",
+      "lower_J": 0.5,
+      "wavelength_nm": 1762.0,
+      "source_type": "paper",
+      "source_doi": "10.1103/PhysRevLett.124.193001",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Abstract, main result",
+        "absolute_frequency_Hz": 170126432449333.31,
+        "absolute_frequency_stat_uncertainty_Hz": 0.39,
+        "absolute_frequency_sys_uncertainty_Hz": 0.29,
+        "absolute_frequency_total_uncertainty_Hz": 0.49,
+        "notes": "Electric quadrupole 6s 2S1/2 - 5d 2D5/2 clock transition of 138Ba+. nu = 170126432449333.31(0.39)_stat(0.29)_sys Hz. Wavelength approximately 1762 nm."
+      }
+    }
+  }
+]

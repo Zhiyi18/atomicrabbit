@@ -1,0 +1,58 @@
+[
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 135, "nuclear_spin": 1.5, "mu_I": null}
+  },
+  {
+    "table": "atoms",
+    "data": {"element": "Ba", "mass_number": 137, "nuclear_spin": 1.5, "mu_I": null}
+  },
+  {
+    "table": "papers",
+    "data": {
+      "title": "Nuclear quadrupole moment of 137Ba from hyperfine measurements in Ba+",
+      "authors": "Silverans, R. E.; Borghs, G.; De Bisschop, P.; Van Hove, M.",
+      "year": 1986,
+      "doi": "10.1103/PhysRevA.33.2117",
+      "journal": "Physical Review A",
+      "notes": "Collinear fast-ion-beam laser spectroscopy on Ba+ 5d 2D5/2 level. Table II (p. 2118): hyperfine A and B constants corrected for second-order hyperfine perturbations. Volume 33, pages 2117-2120. A and B constants for 5d 2D5/2 for Ba-135 and Ba-137. The Ba-137 A constant is superseded by Lewty et al. 2013 (PRA 88, 012518) which gives -12.029234(0.000011) MHz. Nuclear quadrupole moment of 137Ba+ derived from B constant.",
+      "data_types": ["hyperfine_constant"]
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 135,
+      "configuration": "5d", "term_symbol": "2D", "L": 2, "S": 0.5, "J": 2.5,
+      "parity": "even", "energy_cm1": 5674.8,
+      "hyperfine_A_MHz": -10.735,
+      "hyperfine_B_MHz": 38.692,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.33.2117",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table II, p. 2118",
+        "hyperfine_A_uncertainty_MHz": 0.002,
+        "hyperfine_B_uncertainty_MHz": 0.010,
+        "notes": "Corrected for second-order hyperfine perturbations. Most precise available measurement for Ba-135 5d 2D5/2."
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": 137,
+      "configuration": "5d", "term_symbol": "2D", "L": 2, "S": 0.5, "J": 2.5,
+      "parity": "even", "energy_cm1": 5674.8,
+      "hyperfine_A_MHz": -12.028,
+      "hyperfine_B_MHz": 59.533,
+      "source_type": "paper", "source_doi": "10.1103/PhysRevA.33.2117",
+      "is_recommended": 0,
+      "properties": {
+        "source_page": "Table II, p. 2118",
+        "hyperfine_A_uncertainty_MHz": 0.011,
+        "hyperfine_B_uncertainty_MHz": 0.043,
+        "notes": "Superseded by Lewty et al. 2013 (PRA 88, 012518): A=-12.029234(11e-6) MHz, B=59.52552(110e-6) MHz."
+      }
+    }
+  }
+]

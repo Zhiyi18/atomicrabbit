@@ -1,0 +1,54 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Laser Spectroscopy of Barium Resonance Lines",
+      "authors": "Fischer, W. et al.",
+      "year": 1974,
+      "doi": "10.0000/test.fischer.ba.1974",
+      "journal": "Zeitschrift für Physik",
+      "notes": "Reports data for natural barium; isotope not specified in paper. mass_number and nuclear_spin are null — parser should warn.",
+      "data_types": ["energy_level", "transition"]
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Ba",
+      "mass_number": null,
+      "nuclear_spin": null,
+      "mu_I": null
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": null,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.0000/test.fischer.ba.1974",
+      "is_recommended": 0
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Ba", "mass_number": null,
+      "configuration": "6s6p", "term_symbol": "1P", "L": 1, "S": 0.0, "J": 1.0,
+      "parity": "odd", "energy_cm1": 18060.261,
+      "source_type": "paper", "source_doi": "10.0000/test.fischer.ba.1974",
+      "is_recommended": 0
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Ba", "mass_number": null,
+      "upper_config": "6s6p", "upper_term": "1P", "upper_J": 1.0,
+      "lower_config": "6s2", "lower_term": "1S", "lower_J": 0.0,
+      "wavelength_nm": 553.7, "einstein_A_s1": 1.19e8,
+      "source_type": "paper", "source_doi": "10.0000/test.fischer.ba.1974",
+      "is_recommended": 0
+    }
+  }
+]

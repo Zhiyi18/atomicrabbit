@@ -1,0 +1,68 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Absolute frequency measurement of the 171Yb optical lattice clock at KRISS using TAI for over a year",
+      "authors": "Kim, H.; Heo, M.-S.; Park, C. Y.; Yu, D.-H.; Lee, W.-K.",
+      "year": 2021,
+      "doi": "10.1088/1681-7575/ac1950",
+      "journal": "Metrologia",
+      "notes": "arXiv:2108.00108. Metrologia vol. 58, art. 055007 (2021). Absolute frequency of 171Yb 1S0(F=1/2)->3P0(F=1/2) clock transition: 518295836590863.75(14) Hz, fractional uncertainty 2.6e-16. Measurement over 14 months referenced to TAI. Key datum: highest-precision absolute frequency for the 171Yb clock transition available at time of writing. Appears in Abstract and Figure 9/Section 4.",
+      "data_types": ["transition"]
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "nuclear_spin": 0.5, "mu_I": null
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.1088/1681-7575/ac1950",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "configuration": "6s6p", "term_symbol": "3P", "L": 1, "S": 1.0, "J": 0.0,
+      "parity": "odd",
+      "energy_cm1": 17288.488,
+      "source_type": "paper", "source_doi": "10.1088/1681-7575/ac1950",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Abstract, Figure 9, Section 4",
+        "absolute_frequency_Hz": 518295836590863.75,
+        "absolute_frequency_uncertainty_Hz": 0.14,
+        "fractional_uncertainty": 2.6e-16,
+        "energy_cm1_note": "derived from absolute clock transition frequency 518295836590863.75(14) Hz / c; more precise than NIST ASD value (17288.439 cm^-1 for 174Yb)"
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "upper_config": "6s6p", "upper_term": "3P", "upper_J": 0.0,
+      "lower_config": "6s2", "lower_term": "1S", "lower_J": 0.0,
+      "wavelength_nm": 578.4,
+      "frequency_THz": 518.296,
+      "source_type": "paper", "source_doi": "10.1088/1681-7575/ac1950",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Abstract, Figure 9, Section 4",
+        "absolute_frequency_Hz": 518295836590863.75,
+        "absolute_frequency_uncertainty_Hz": 0.14,
+        "fractional_uncertainty": 2.6e-16,
+        "note": "1S0(F=1/2)->3P0(F=1/2) clock transition; only one hyperfine state for each J=0 level (I=1/2). Measurement via optical lattice clock over 14 months against TAI."
+      }
+    }
+  }
+]

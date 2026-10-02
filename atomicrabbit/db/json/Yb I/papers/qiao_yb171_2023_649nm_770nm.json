@@ -1,0 +1,125 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Frequency measurement of 6s6p 3P0,2-6s7s 3S1 transitions in ultracold 171Yb atoms referenced to local optical clock",
+      "authors": "Qiao, H.; Sun, C.-Y.; Peng, C.-Q.; Qi, Q.-C.; Zhao, C.-C.; Zhou, M.; Xu, X.-Y.",
+      "year": 2023,
+      "doi": "10.1016/j.rinp.2023.106439",
+      "journal": "Results in Physics",
+      "notes": "Absolute frequency measurements of 3P0->3S1 (649nm) and first measurement of 3P2->3S1 (770nm) transitions in ultracold 171Yb in an optical lattice, referenced to the local optical clock. Accuracy ~100 kHz (one order of magnitude improvement over previous work for 3P0->3S1). Derives hyperfine A constants for 3P2 and 3S1 states.",
+      "data_types": ["hyperfine_constant", "transition"]
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "nuclear_spin": 0.5, "mu_I": null
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.1016/j.rinp.2023.106439",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "configuration": "6s6p", "term_symbol": "3P", "L": 1, "S": 1.0, "J": 0.0,
+      "parity": "odd",
+      "energy_cm1": 17288.439,
+      "source_type": "paper", "source_doi": "10.1016/j.rinp.2023.106439",
+      "is_recommended": 0,
+      "properties": {
+        "note": "FK reference level; no new data. J=0 so no magnetic hyperfine. energy_cm1 approximate from NIST 174Yb"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "configuration": "6s6p", "term_symbol": "3P", "L": 1, "S": 1.0, "J": 2.0,
+      "parity": "odd",
+      "energy_cm1": 19710.388,
+      "hyperfine_A_MHz": 2682.86,
+      "source_type": "paper", "source_doi": "10.1016/j.rinp.2023.106439",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table (main results)",
+        "hyperfine_A_uncertainty_MHz": 0.38,
+        "hyperfine_A_note": "derived from 3P2->3S1 component frequencies: A = 2*(ν_high - ν_mid)/5 where ν_high=389267277.10 MHz (F=3/2->F=3/2), ν_mid=389260569.95 MHz (F=5/2->F=3/2)",
+        "energy_cm1_note": "approximate from NIST 174Yb"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "configuration": "6s7s", "term_symbol": "3S", "L": 0, "S": 1.0, "J": 1.0,
+      "parity": "even",
+      "energy_cm1": 32696.2,
+      "hyperfine_A_MHz": 6838.69,
+      "source_type": "paper", "source_doi": "10.1016/j.rinp.2023.106439",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table (main results)",
+        "hyperfine_A_uncertainty_MHz": 0.25,
+        "hyperfine_A_note": "derived from 3P0->3S1 component frequencies: A = 2*(ν_F32 - ν_F12)/3 = 2*(461871596.07 - 461861338.03)/3 = 6838.69 MHz",
+        "energy_cm1_note": "derived from NIST 3P0 energy + Qiao 2023 COG transition frequency 461868177 MHz / c"
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "upper_config": "6s7s", "upper_term": "3S", "upper_J": 1.0,
+      "lower_config": "6s6p", "lower_term": "3P", "lower_J": 0.0,
+      "wavelength_nm": 649.1,
+      "frequency_THz": 461.868,
+      "source_type": "paper", "source_doi": "10.1016/j.rinp.2023.106439",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table (main results), Section results",
+        "frequency_note": "center-of-gravity frequency 461868177 MHz computed from hyperfine components",
+        "comp_3P0F12_to_3S1F12_MHz": 461861338.03,
+        "comp_3P0F12_to_3S1F12_uncertainty_MHz": 0.21,
+        "comp_3P0F12_to_3S1F32_MHz": 461871596.07,
+        "comp_3P0F12_to_3S1F32_uncertainty_MHz": 0.31,
+        "note": "3P0 has only F=1/2; upper-state hyperfine splitting = 10258.04 MHz → A(3S1) = 6838.69(0.25) MHz"
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 171,
+      "upper_config": "6s7s", "upper_term": "3S", "upper_J": 1.0,
+      "lower_config": "6s6p", "lower_term": "3P", "lower_J": 2.0,
+      "wavelength_nm": 770.2,
+      "frequency_THz": 389.260,
+      "source_type": "paper", "source_doi": "10.1016/j.rinp.2023.106439",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table (main results), Section results",
+        "frequency_note": "center-of-gravity frequency 389259834 MHz derived from hyperfine component analysis",
+        "comp_3P2F32_to_3S1F12_MHz": 389257019.71,
+        "comp_3P2F32_to_3S1F12_uncertainty_MHz": 0.65,
+        "comp_3P2F52_to_3S1F32_MHz": 389260569.95,
+        "comp_3P2F52_to_3S1F32_uncertainty_MHz": 0.89,
+        "comp_3P2F32_to_3S1F32_MHz": 389267277.10,
+        "comp_3P2F32_to_3S1F32_uncertainty_MHz": 0.37,
+        "note": "first absolute frequency measurement of 3P2->3S1 at 770nm; 3 hyperfine component transitions stored in properties"
+      }
+    }
+  }
+]

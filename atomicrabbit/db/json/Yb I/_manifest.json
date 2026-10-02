@@ -1,0 +1,19 @@
+{
+  "linename": "Yb I",
+  "element": "Yb",
+  "nist_mass_numbers": [null],
+  "nist_wavelength_ranges_nm": [[100, 500], [500, 1000], [1000, 2000]],
+  "paper_order": [
+    "nudat3_yb_nuclear_moments.json",
+    "kleinert_yb_2016_399nm.json",
+    "atkinson_yb_2019_556nm.json",
+    "kawasaki_yb_2024_431nm.json",
+    "jones_yb171_2023_556nm.json",
+    "kim_yb171_2021_clock.json",
+    "qiao_yb_2023_770nm_mts.json",
+    "qiao_yb171_2023_649nm_770nm.json",
+    "suryanarayana_yb_2023_581nm.json",
+    "borisov_yb_1996_581nm.json",
+    "kroeze_yb171_2025.json"
+  ]
+}

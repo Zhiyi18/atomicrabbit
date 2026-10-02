@@ -1,0 +1,80 @@
+[
+  {
+    "table": "papers",
+    "data": {
+      "title": "Investigation of the 6s6p 3P2-6s7s 3S1 transition of ytterbium atoms with modulation-transfer spectroscopy",
+      "authors": "Qiao, H.; Liu, L.; Zhou, M.; Luo, L.; Xu, X.",
+      "year": 2023,
+      "doi": "10.1063/5.0155776",
+      "journal": "Applied Physics Letters",
+      "notes": "APL vol. 122, art. 224002 (2023). Modulation-transfer spectroscopy of the 770nm 3P2->3S1 transition in neutral Yb vapor. Measures 174Yb absolute frequency (389260605.8 ± 3.2 MHz) and isotope shifts for all stable isotopes except 168Yb and some 171Yb hyperfine states. Also determines hyperfine constants for 173Yb. Paper not accessible via open access; isotope shift and 173Yb hyperfine data pending direct extraction.",
+      "data_types": ["isotope_shift", "hyperfine_constant", "transition"]
+    }
+  },
+  {
+    "table": "atoms",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "nuclear_spin": 0.0, "mu_I": null
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "configuration": "6s2", "term_symbol": "1S", "L": 0, "S": 0.0, "J": 0.0,
+      "parity": "even", "energy_cm1": 0.0,
+      "source_type": "paper", "source_doi": "10.1063/5.0155776",
+      "is_recommended": 1
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "configuration": "6s6p", "term_symbol": "3P", "L": 1, "S": 1.0, "J": 2.0,
+      "parity": "odd",
+      "energy_cm1": 19710.388,
+      "source_type": "paper", "source_doi": "10.1063/5.0155776",
+      "is_recommended": 1,
+      "properties": {
+        "note": "energy_cm1 approximate from NIST 174Yb; FK reference level"
+      }
+    }
+  },
+  {
+    "table": "energy_levels",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "configuration": "6s7s", "term_symbol": "3S", "L": 0, "S": 1.0, "J": 1.0,
+      "parity": "even",
+      "energy_cm1": 32694.8,
+      "source_type": "paper", "source_doi": "10.1063/5.0155776",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "Table/main result (absolute frequency)",
+        "absolute_frequency_MHz": 389260605.8,
+        "absolute_frequency_uncertainty_MHz": 3.2,
+        "energy_cm1_note": "derived from NIST 3P2 energy (19710.388 cm^-1) + absolute frequency 389260605.8 MHz / c"
+      }
+    }
+  },
+  {
+    "table": "transitions",
+    "data": {
+      "element": "Yb", "mass_number": 174,
+      "upper_config": "6s7s", "upper_term": "3S", "upper_J": 1.0,
+      "lower_config": "6s6p", "lower_term": "3P", "lower_J": 2.0,
+      "wavelength_nm": 770.2,
+      "frequency_THz": 389.261,
+      "source_type": "paper", "source_doi": "10.1063/5.0155776",
+      "is_recommended": 1,
+      "properties": {
+        "source_page": "main result (absolute frequency)",
+        "absolute_frequency_MHz": 389260605.8,
+        "absolute_frequency_uncertainty_MHz": 3.2,
+        "note": "174Yb reference isotope; isotope shifts for 170,172,173,176Yb pending data extraction from paper (not open access)"
+      }
+    }
+  }
+]
