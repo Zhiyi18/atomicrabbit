@@ -66,46 +66,6 @@ class Transition(FineTransition):
                     * hf
                 )
         
-
-    '''
-    def angular_factor(self, laser):
-        q = laser.polarization
-        if q not in(-1, 0, 1):
-            raise ValueError(
-                'Laser polarisation must be -1, 0, or 1'
-                )
-            
-        elif isinstance(self.lower, states.FineState):
-            Jp = self.upper.J
-            mp = self.upper.mJ
-            F = self.lower.J
-            m = self.lower.mJ
-            exponent = Jp - mp
-        
-        elif isinstance(self.lower, states.HyperfineState):
-            raise ValueError(
-                'HyperfineState has no mF. Use ZeemanState to calculate angular factors.'
-                )
-        
-        elif isinstance(self.lower, states.ZeemanState):
-            Fp = self.upper.F
-            mp = self.upper.mF
-            F = self.lower.F
-            m = self.lower.mF
-            exponent = Fp - mp
-            
-        else:
-            raise TypeError(
-                f'Unsupported state type: {type(self.lower).__name__}'
-                )
-            
-        cg = float(N(wigner_3j(Fp, 1, F, -mp, q, m)))
-        return (
-                (-1) ** exponent
-                * cg
-        )
-        
-    '''
     
     def angular_factor(self, q):
         if q not in (-1, 0, 1):
@@ -180,6 +140,15 @@ class Transition(FineTransition):
        E0 = laser.electric_field_amplitude()
        
        return self.transition_dipole(laser) * E0 / hbar
+
+    # Time-dependent Rabi frequency
+    # Returns a list of Rabi frequencies used in time-dependent Hamiltonian calculations
+    def tdrf(self, laser, t):
+        frequency = self.rabi_frequency
+        amplitude_vals = laser.amplitude_vals(t)
+
+        return frequency * amplitude_vals
+
     
     def B21(self):
         return self.A * c**3 / (8 * np.pi * h * self.frequency()** 3)

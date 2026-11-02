@@ -17,11 +17,10 @@ class Atom:
     I: Optional[float] = 0
     mu_I: Optional[float] = 0
     B: Optional[float] = 0
-    
-    # def load_transition(self, table):
+    quantization_axis: Optional[tuple] = None
 
     @classmethod
-    def make_atom(cls, element, mass_number, db_path, laser_list, B=0):
+    def make_atom(cls, element, mass_number, db_path, laser_list, B=0, quantization_axis=None):
         """
         Construct an Atom from spectroscopy.db, replacing hand-coded FineState/Transition setup.
         Usage: Yb174 = Atom.make_atom('Yb', 174, db_path, laser_list, B=1e-4)
@@ -30,7 +29,7 @@ class Atom:
         constants from paper sources) and matches them to NIST A coefficients by
         energy proximity (isotope shifts are <0.01 cm⁻¹, so a 1 cm⁻¹ tolerance is safe).
 
-        Parameters
+        Properties
         ----------
         element : str           Element symbol, e.g. 'Yb'.
         mass_number : int       Isotope mass number, e.g. 174.
@@ -114,6 +113,7 @@ class Atom:
             I=I,
             mu_I=mu_I,
             B=B,
+            quantization_axis=quantization_axis,
         )
 
     def add_fine_states(self):
@@ -297,7 +297,6 @@ class Atom:
         G = self.atom_graph()
 
         # Diagonal: driven states (have edges) get rotating-frame energies.
-        # Isolated nodes are undriven — their raw energy_omega is optical-scale; skip them.
         energies = self.assign_rotating_frame_energies(G)
         for state, E in energies.items():
             if G.degree(state) > 0:
