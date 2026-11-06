@@ -10,6 +10,11 @@ from atomicrabbit.physics import lasers
 
 @dataclass(frozen=True)
 class FineTransition:
+    """
+    Transitions with both upper and lower state being FineState.
+    Actually I totally forgot why this exists since I have class Transition,
+    but let's keep it in case it's used somewhere...
+    """
     lower: states.FineState
     upper: states.FineState
     A: float
@@ -18,6 +23,9 @@ class FineTransition:
     
 @dataclass(frozen=True)
 class Transition(FineTransition):
+    """
+    Transitions with arbitrary lower and upper states.
+    """
     lower: states.FineState | states.HyperfineState | states.ZeemanState
     upper: states.FineState | states.HyperfineState | states.ZeemanState
 

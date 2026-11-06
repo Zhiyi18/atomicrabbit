@@ -10,6 +10,13 @@ import networkx as nx
 
 @dataclass(frozen=True)
 class Atom:
+    """
+    Properties/method to be added:
+    >> mass: calculates the atom's mass
+    >> motional and interaction hamiltonians
+    >> add ion_chain.py to construct the full GKSL equation
+    """
+
     species: str
     isotope: str
     transition_list: list[transitions.FineTransition]
@@ -22,7 +29,7 @@ class Atom:
     @classmethod
     def make_atom(cls, element, mass_number, db_path, laser_list, B=0, quantization_axis=None):
         """
-        Construct an Atom from spectroscopy.db, replacing hand-coded FineState/Transition setup.
+        Construct an Atom from spectroscopy.db.
         Usage: Yb174 = Atom.make_atom('Yb', 174, db_path, laser_list, B=1e-4)
 
         Loads is_recommended energy levels for the isotope (energies and hyperfine
@@ -214,7 +221,7 @@ class Atom:
         return ratios
 
     def driven_transitions(self):
-        # Add situations where the transitions are not zeeman states later
+        # Add situations where the transitions are FineStates later
         driven_transition = []
         zeeman_transitions = self.zeeman_transitions()
         for zeeman_transition in zeeman_transitions:

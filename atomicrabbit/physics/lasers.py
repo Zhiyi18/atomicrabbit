@@ -40,15 +40,16 @@ class Laser:
     linewidth: Hz
     ---------
     All axes are given in Cartesian coordinates.
-    If not specified, the default propagation direction is in z axis direction.
+    If not specified, the default propagation direction is in z-axis direction.
     -----------------------------
     Polarization is given in Spherical basis or Jones basis.
     Spherical basis: +/- 1 for sigma +/- polarization, and 0 for pi polarization.
                      The components are in order (sigma-, pi, sigma+).
     Jones basis: Polarization represented in Jones vector.
     -----------------------------
-
-
+    Since now we only have GKSL equation with secular approximation(linewidth << level spacing),
+    the power spectrum of the laser is ignored.
+    Add power spectrum when adding Redfield modules!
     """
 
     frequency: float
@@ -125,7 +126,17 @@ class Laser:
             
 
 @dataclass(frozen=True, kw_only=True)  
-class LaserPulse:
+class Pulse:
+    """
+    The laser pulse.
+    """
+    laser: Laser
+    start_time: float
+    stop_time: float
+    time_step: float
+    envelope: Optional[str] = None
+
+
 
 
     
